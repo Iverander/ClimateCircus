@@ -250,7 +250,7 @@ MonoBehaviour:
   lateLatchingDebug: 0
   optimizeMultiviewRenderRegions: 0
   m_multiviewRenderRegionsOptimizationMode: 0
-  m_hasMigratedMultiviewRenderRegions: 0
+  m_hasMigratedMultiviewRenderRegions: 1
   spacewarpMotionVectorTextureFormat: 0
 --- !u!114 &-4764614406185465982
 MonoBehaviour:
@@ -643,25 +643,25 @@ MonoBehaviour:
   m_Name: Android
   m_EditorClassIdentifier: Unity.XR.OpenXR::UnityEngine.XR.OpenXR.OpenXRSettings
   features:
-  - {fileID: 1120719739149703158}
-  - {fileID: 5542486691975222124}
-  - {fileID: -7712258169475578844}
-  - {fileID: -4967490108553017863}
-  - {fileID: 3384678363471701308}
-  - {fileID: 371829827825739043}
-  - {fileID: 6612815477504212303}
-  - {fileID: 7787771638981890342}
-  - {fileID: 5895685666204938883}
-  - {fileID: 3679373672413347540}
-  - {fileID: -6422800455213851020}
   - {fileID: 3230068163214725351}
+  - {fileID: 6805637605738254508}
+  - {fileID: 3384678363471701308}
+  - {fileID: -6422800455213851020}
+  - {fileID: 5895685666204938883}
+  - {fileID: 1540115946976670405}
+  - {fileID: -5135500903345938474}
   - {fileID: -5534628768836686985}
   - {fileID: 297557533673104262}
-  - {fileID: -1625241220185977221}
-  - {fileID: -5135500903345938474}
-  - {fileID: 1540115946976670405}
+  - {fileID: -4967490108553017863}
   - {fileID: -4143783470596946172}
-  - {fileID: 6805637605738254508}
+  - {fileID: 3679373672413347540}
+  - {fileID: 7787771638981890342}
+  - {fileID: -7712258169475578844}
+  - {fileID: 5542486691975222124}
+  - {fileID: 6612815477504212303}
+  - {fileID: 371829827825739043}
+  - {fileID: 1120719739149703158}
+  - {fileID: -1625241220185977221}
   customLoaderName: 
   m_renderMode: 1
   m_latencyOptimization: 0
@@ -674,7 +674,7 @@ MonoBehaviour:
   m_symmetricProjection: 0
   m_optimizeMultiviewRenderRegions: 0
   m_multiviewRenderRegionsOptimizationMode: 0
-  m_hasMigratedMultiviewRenderRegionSetting: 0
+  m_hasMigratedMultiviewRenderRegionSetting: 1
   m_foveatedRenderingApi: 0
   m_useOpenXRPredictedTime: 0
 --- !u!114 &2851048021666794750
