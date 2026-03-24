@@ -14,6 +14,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "RightHand_Pos",
+                    "type": "Value",
+                    "id": "c82a95d3-4af4-4292-8194-2979fa9e7163",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "LeftHand_Pos",
+                    "type": "Value",
+                    "id": "ed003599-ae17-4bc0-a600-036fc6f253f4",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -119,11 +137,33 @@
                 {
                     "name": "",
                     "id": "1635d3fe-58b6-4ba9-a4e2-f4b964f6b5c8",
-                    "path": "<XRController>/{Primary2DAxis}",
+                    "path": "<XRController>{LeftHand}/thumbstick",
                     "interactions": "",
                     "processors": "",
                     "groups": "XR",
                     "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e5543959-dff1-4f6e-8a76-d8543c17e567",
+                    "path": "<XRController>{RightHand}/devicePosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";XR",
+                    "action": "RightHand_Pos",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "627b0267-080a-4591-84fc-e2bd13ae427f",
+                    "path": "<XRController>{LeftHand}/devicePosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";XR",
+                    "action": "LeftHand_Pos",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
