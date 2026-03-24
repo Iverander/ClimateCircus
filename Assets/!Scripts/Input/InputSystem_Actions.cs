@@ -118,6 +118,24 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""RightHand_Rot"",
+                    ""type"": ""Value"",
+                    ""id"": ""0b4d91a2-a46e-4c60-84a5-8b68ac848e19"",
+                    ""expectedControlType"": ""Quaternion"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""LeftHand_Rot"",
+                    ""type"": ""Value"",
+                    ""id"": ""14467f13-1456-4d1e-87cf-afa252d24cb9"",
+                    ""expectedControlType"": ""Quaternion"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -250,6 +268,28 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": "";XR"",
                     ""action"": ""LeftHand_Pos"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""71231122-a904-4bbb-b10e-00c645db61d8"",
+                    ""path"": ""<XRController>{RightHand}/deviceRotation"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";XR"",
+                    ""action"": ""RightHand_Rot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4c35d8bc-2ed6-4af1-8bdc-09e4a6b36874"",
+                    ""path"": ""<XRController>{LeftHand}/deviceRotation"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";XR"",
+                    ""action"": ""LeftHand_Rot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -807,6 +847,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_RightHand_Pos = m_Player.FindAction("RightHand_Pos", throwIfNotFound: true);
         m_Player_LeftHand_Pos = m_Player.FindAction("LeftHand_Pos", throwIfNotFound: true);
+        m_Player_RightHand_Rot = m_Player.FindAction("RightHand_Rot", throwIfNotFound: true);
+        m_Player_LeftHand_Rot = m_Player.FindAction("LeftHand_Rot", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -903,6 +945,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_RightHand_Pos;
     private readonly InputAction m_Player_LeftHand_Pos;
+    private readonly InputAction m_Player_RightHand_Rot;
+    private readonly InputAction m_Player_LeftHand_Rot;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -926,6 +970,14 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/LeftHand_Pos".
         /// </summary>
         public InputAction @LeftHand_Pos => m_Wrapper.m_Player_LeftHand_Pos;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/RightHand_Rot".
+        /// </summary>
+        public InputAction @RightHand_Rot => m_Wrapper.m_Player_RightHand_Rot;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/LeftHand_Rot".
+        /// </summary>
+        public InputAction @LeftHand_Rot => m_Wrapper.m_Player_LeftHand_Rot;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -961,6 +1013,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @LeftHand_Pos.started += instance.OnLeftHand_Pos;
             @LeftHand_Pos.performed += instance.OnLeftHand_Pos;
             @LeftHand_Pos.canceled += instance.OnLeftHand_Pos;
+            @RightHand_Rot.started += instance.OnRightHand_Rot;
+            @RightHand_Rot.performed += instance.OnRightHand_Rot;
+            @RightHand_Rot.canceled += instance.OnRightHand_Rot;
+            @LeftHand_Rot.started += instance.OnLeftHand_Rot;
+            @LeftHand_Rot.performed += instance.OnLeftHand_Rot;
+            @LeftHand_Rot.canceled += instance.OnLeftHand_Rot;
         }
 
         /// <summary>
@@ -981,6 +1039,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @LeftHand_Pos.started -= instance.OnLeftHand_Pos;
             @LeftHand_Pos.performed -= instance.OnLeftHand_Pos;
             @LeftHand_Pos.canceled -= instance.OnLeftHand_Pos;
+            @RightHand_Rot.started -= instance.OnRightHand_Rot;
+            @RightHand_Rot.performed -= instance.OnRightHand_Rot;
+            @RightHand_Rot.canceled -= instance.OnRightHand_Rot;
+            @LeftHand_Rot.started -= instance.OnLeftHand_Rot;
+            @LeftHand_Rot.performed -= instance.OnLeftHand_Rot;
+            @LeftHand_Rot.canceled -= instance.OnLeftHand_Rot;
         }
 
         /// <summary>
@@ -1263,6 +1327,20 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnLeftHand_Pos(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "RightHand_Rot" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnRightHand_Rot(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "LeftHand_Rot" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnLeftHand_Rot(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

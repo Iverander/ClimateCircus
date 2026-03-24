@@ -32,6 +32,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "RightHand_Rot",
+                    "type": "Value",
+                    "id": "0b4d91a2-a46e-4c60-84a5-8b68ac848e19",
+                    "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "LeftHand_Rot",
+                    "type": "Value",
+                    "id": "14467f13-1456-4d1e-87cf-afa252d24cb9",
+                    "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -164,6 +182,28 @@
                     "processors": "",
                     "groups": ";XR",
                     "action": "LeftHand_Pos",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "71231122-a904-4bbb-b10e-00c645db61d8",
+                    "path": "<XRController>{RightHand}/deviceRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";XR",
+                    "action": "RightHand_Rot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4c35d8bc-2ed6-4af1-8bdc-09e4a6b36874",
+                    "path": "<XRController>{LeftHand}/deviceRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";XR",
+                    "action": "LeftHand_Rot",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

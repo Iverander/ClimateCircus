@@ -18,11 +18,13 @@ public class Hand : MonoBehaviour
             case Handedness.Right:
                 {
                     Player.inputReader.onRHandPos += UpdatePosition;
+                    Player.inputReader.onRHandRot += UpdateRotation;
                     break;
                 }
             case Handedness.Left:
                 {
                     Player.inputReader.onLHandPos += UpdatePosition;
+                    Player.inputReader.onLHandRot += UpdateRotation;
                     break;
                 }
         }
@@ -31,6 +33,10 @@ public class Hand : MonoBehaviour
     void UpdatePosition(Vector3 pos)
     {
         transform.position = pos;
+    }
+    void UpdateRotation(Quaternion rot)
+    {
+        transform.rotation = rot;
     }
 
 }
