@@ -24,4 +24,15 @@ public class InputReader : InputSystem_Actions.IPlayerActions
     {
         onMove?.Invoke(context.ReadValue<Vector2>());
     }
+
+    public Action<Vector3> onRHandPos;
+    public void OnRightHand_Pos(InputAction.CallbackContext context)
+    {
+        
+    }
+        public Action<Vector3> onLHandPos;
+    public void OnLeftHand_Pos(InputAction.CallbackContext context)
+    {
+        
+    }
 }
