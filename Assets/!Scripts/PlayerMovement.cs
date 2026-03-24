@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    Vector3 moveDir => (transform.forward * moveVal.y + transform.right * moveVal.x).normalized;
+    Vector3 moveDir => (Player.instance.camera.transform.forward * moveVal.y + Player.instance.camera.transform.right * moveVal.x).normalized;
     Vector2 moveVal;
 
     [SerializeField] float speed;
