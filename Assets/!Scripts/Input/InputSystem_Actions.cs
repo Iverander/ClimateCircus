@@ -100,6 +100,42 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""RightHand_Pos"",
+                    ""type"": ""Value"",
+                    ""id"": ""c82a95d3-4af4-4292-8194-2979fa9e7163"",
+                    ""expectedControlType"": ""Vector3"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""LeftHand_Pos"",
+                    ""type"": ""Value"",
+                    ""id"": ""ed003599-ae17-4bc0-a600-036fc6f253f4"",
+                    ""expectedControlType"": ""Vector3"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""RightHand_Rot"",
+                    ""type"": ""Value"",
+                    ""id"": ""0b4d91a2-a46e-4c60-84a5-8b68ac848e19"",
+                    ""expectedControlType"": ""Quaternion"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""LeftHand_Rot"",
+                    ""type"": ""Value"",
+                    ""id"": ""14467f13-1456-4d1e-87cf-afa252d24cb9"",
+                    ""expectedControlType"": ""Quaternion"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -205,11 +241,55 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""1635d3fe-58b6-4ba9-a4e2-f4b964f6b5c8"",
-                    ""path"": ""<XRController>/{Primary2DAxis}"",
+                    ""path"": ""<XRController>{LeftHand}/thumbstick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""XR"",
                     ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e5543959-dff1-4f6e-8a76-d8543c17e567"",
+                    ""path"": ""<XRController>{RightHand}/devicePosition"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";XR"",
+                    ""action"": ""RightHand_Pos"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""627b0267-080a-4591-84fc-e2bd13ae427f"",
+                    ""path"": ""<XRController>{LeftHand}/devicePosition"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";XR"",
+                    ""action"": ""LeftHand_Pos"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""71231122-a904-4bbb-b10e-00c645db61d8"",
+                    ""path"": ""<XRController>{RightHand}/deviceRotation"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";XR"",
+                    ""action"": ""RightHand_Rot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4c35d8bc-2ed6-4af1-8bdc-09e4a6b36874"",
+                    ""path"": ""<XRController>{LeftHand}/deviceRotation"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";XR"",
+                    ""action"": ""LeftHand_Rot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -765,6 +845,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
+        m_Player_RightHand_Pos = m_Player.FindAction("RightHand_Pos", throwIfNotFound: true);
+        m_Player_LeftHand_Pos = m_Player.FindAction("LeftHand_Pos", throwIfNotFound: true);
+        m_Player_RightHand_Rot = m_Player.FindAction("RightHand_Rot", throwIfNotFound: true);
+        m_Player_LeftHand_Rot = m_Player.FindAction("LeftHand_Rot", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -859,6 +943,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Move;
+    private readonly InputAction m_Player_RightHand_Pos;
+    private readonly InputAction m_Player_LeftHand_Pos;
+    private readonly InputAction m_Player_RightHand_Rot;
+    private readonly InputAction m_Player_LeftHand_Rot;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -874,6 +962,22 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/Move".
         /// </summary>
         public InputAction @Move => m_Wrapper.m_Player_Move;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/RightHand_Pos".
+        /// </summary>
+        public InputAction @RightHand_Pos => m_Wrapper.m_Player_RightHand_Pos;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/LeftHand_Pos".
+        /// </summary>
+        public InputAction @LeftHand_Pos => m_Wrapper.m_Player_LeftHand_Pos;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/RightHand_Rot".
+        /// </summary>
+        public InputAction @RightHand_Rot => m_Wrapper.m_Player_RightHand_Rot;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/LeftHand_Rot".
+        /// </summary>
+        public InputAction @LeftHand_Rot => m_Wrapper.m_Player_LeftHand_Rot;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -903,6 +1007,18 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
+            @RightHand_Pos.started += instance.OnRightHand_Pos;
+            @RightHand_Pos.performed += instance.OnRightHand_Pos;
+            @RightHand_Pos.canceled += instance.OnRightHand_Pos;
+            @LeftHand_Pos.started += instance.OnLeftHand_Pos;
+            @LeftHand_Pos.performed += instance.OnLeftHand_Pos;
+            @LeftHand_Pos.canceled += instance.OnLeftHand_Pos;
+            @RightHand_Rot.started += instance.OnRightHand_Rot;
+            @RightHand_Rot.performed += instance.OnRightHand_Rot;
+            @RightHand_Rot.canceled += instance.OnRightHand_Rot;
+            @LeftHand_Rot.started += instance.OnLeftHand_Rot;
+            @LeftHand_Rot.performed += instance.OnLeftHand_Rot;
+            @LeftHand_Rot.canceled += instance.OnLeftHand_Rot;
         }
 
         /// <summary>
@@ -917,6 +1033,18 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
+            @RightHand_Pos.started -= instance.OnRightHand_Pos;
+            @RightHand_Pos.performed -= instance.OnRightHand_Pos;
+            @RightHand_Pos.canceled -= instance.OnRightHand_Pos;
+            @LeftHand_Pos.started -= instance.OnLeftHand_Pos;
+            @LeftHand_Pos.performed -= instance.OnLeftHand_Pos;
+            @LeftHand_Pos.canceled -= instance.OnLeftHand_Pos;
+            @RightHand_Rot.started -= instance.OnRightHand_Rot;
+            @RightHand_Rot.performed -= instance.OnRightHand_Rot;
+            @RightHand_Rot.canceled -= instance.OnRightHand_Rot;
+            @LeftHand_Rot.started -= instance.OnLeftHand_Rot;
+            @LeftHand_Rot.performed -= instance.OnLeftHand_Rot;
+            @LeftHand_Rot.canceled -= instance.OnLeftHand_Rot;
         }
 
         /// <summary>
@@ -1185,6 +1313,34 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMove(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "RightHand_Pos" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnRightHand_Pos(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "LeftHand_Pos" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnLeftHand_Pos(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "RightHand_Rot" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnRightHand_Rot(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "LeftHand_Rot" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnLeftHand_Rot(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.
