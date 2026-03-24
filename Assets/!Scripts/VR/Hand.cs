@@ -8,15 +8,29 @@ public class Hand : MonoBehaviour
         Left
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    public Handedness handedness;
+
     void Start()
     {
-        
+        switch(handedness)
+        {
+            case Handedness.Right:
+                {
+                    Player.inputReader.onRHandPos += UpdatePosition;
+                    break;
+                }
+            case Handedness.Left:
+                {
+                    Player.inputReader.onLHandPos += UpdatePosition;
+                    break;
+                }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void UpdatePosition(Vector3 pos)
     {
-        
+        transform.position = pos;
     }
+
 }
