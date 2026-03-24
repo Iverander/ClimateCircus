@@ -17,14 +17,14 @@ public class Hand : MonoBehaviour
         {
             case Handedness.Right:
                 {
-                    Player.inputReader.onRHandPos += UpdatePosition;
-                    Player.inputReader.onRHandRot += UpdateRotation;
+                    Player.inputReader.onHandPos_R += UpdatePosition;
+                    Player.inputReader.onHandRot_R += UpdateRotation;
                     break;
                 }
             case Handedness.Left:
                 {
-                    Player.inputReader.onLHandPos += UpdatePosition;
-                    Player.inputReader.onLHandRot += UpdateRotation;
+                    Player.inputReader.onHandPos_L += UpdatePosition;
+                    Player.inputReader.onHandRot_L += UpdateRotation;
                     break;
                 }
         }

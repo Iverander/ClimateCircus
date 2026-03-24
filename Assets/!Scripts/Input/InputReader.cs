@@ -25,25 +25,25 @@ public class InputReader : InputSystem_Actions.IPlayerActions
         onMove?.Invoke(context.ReadValue<Vector2>());
     }
 
-    public Action<Vector3> onRHandPos;
-    public void OnRightHand_Pos(InputAction.CallbackContext context)
+    public Action<Vector3> onHandPos_R;
+    public void OnHandPos_R(InputAction.CallbackContext context)
     {
-        onRHandPos?.Invoke(context.ReadValue<Vector3>());
+        onHandPos_R?.Invoke(context.ReadValue<Vector3>());
     }
-    public Action<Vector3> onLHandPos;
-    public void OnLeftHand_Pos(InputAction.CallbackContext context)
+    public Action<Vector3> onHandPos_L;
+    public void OnHandPos_L(InputAction.CallbackContext context)
     {
-        onLHandPos?.Invoke(context.ReadValue<Vector3>());
+        onHandPos_L?.Invoke(context.ReadValue<Vector3>());
     }
 
-        public Action<Quaternion> onRHandRot;
-    public void OnRightHand_Rot(InputAction.CallbackContext context)
+        public Action<Quaternion> onHandRot_R;
+    public void OnHandRot_R(InputAction.CallbackContext context)
     {
-        onRHandRot?.Invoke(context.ReadValue<Quaternion>());
+        onHandRot_R?.Invoke(context.ReadValue<Quaternion>());
     }
-    public Action<Quaternion> onLHandRot;
-    public void OnLeftHand_Rot(InputAction.CallbackContext context)
+    public Action<Quaternion> onHandRot_L;
+    public void OnHandRot_L(InputAction.CallbackContext context)
     {
-        onLHandRot?.Invoke(context.ReadValue<Quaternion>());
+        onHandRot_L?.Invoke(context.ReadValue<Quaternion>());
     }
 }
