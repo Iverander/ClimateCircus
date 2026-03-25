@@ -872,6 +872,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 3894c360ab3b9af46b786656ffe0e50e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3bea457924c2a8946872cd6540114eca, type: 2}
     - target: {fileID: 919132149155446097, guid: 3894c360ab3b9af46b786656ffe0e50e, type: 3}
       propertyPath: m_Name
       value: Barrel_1
@@ -1109,6 +1113,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 0353039d953c4c94f8e59803f5b34e46, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3bea457924c2a8946872cd6540114eca, type: 2}
     - target: {fileID: 919132149155446097, guid: 0353039d953c4c94f8e59803f5b34e46, type: 3}
       propertyPath: m_Name
       value: trash
@@ -6745,6 +6753,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -30
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 3894c360ab3b9af46b786656ffe0e50e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3bea457924c2a8946872cd6540114eca, type: 2}
     - target: {fileID: 919132149155446097, guid: 3894c360ab3b9af46b786656ffe0e50e, type: 3}
       propertyPath: m_Name
       value: Barrel_2
@@ -7104,6 +7116,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: d54dcdfdd409cd64389ac5f7b0bc22ce, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c03c34ceb3e2fe4795a113b8e2acef4, type: 2}
     - target: {fileID: 919132149155446097, guid: d54dcdfdd409cd64389ac5f7b0bc22ce, type: 3}
       propertyPath: m_Name
       value: 1970s_ticket_booth
@@ -7601,6 +7617,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: d1055a160d3577d4285f82971f9059eb, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2c03c34ceb3e2fe4795a113b8e2acef4, type: 2}
     - target: {fileID: 919132149155446097, guid: d1055a160d3577d4285f82971f9059eb, type: 3}
       propertyPath: m_Name
       value: new_rock_afire_explosion_mech_-_looney_bird
@@ -7935,6 +7955,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: dbca69d8d6318e74b9556c0d43b9a3c8, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9e8738e4289653d4c90bbf436f5eca0d, type: 2}
     - target: {fileID: 919132149155446097, guid: dbca69d8d6318e74b9556c0d43b9a3c8, type: 3}
       propertyPath: m_Name
       value: pile_of_trash_and_garbage_3_piece_set 1
