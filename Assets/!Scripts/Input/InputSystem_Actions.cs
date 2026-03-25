@@ -205,7 +205,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""1635d3fe-58b6-4ba9-a4e2-f4b964f6b5c8"",
-                    ""path"": ""<OculusTouchController>{RightHand}/thumbstick"",
+                    ""path"": ""<XRController>{RightHand}/primary2DAxis"",
                     ""interactions"": ""Sector(directions=-1,sweepBehavior=3)"",
                     ""processors"": """",
                     ""groups"": ""XR"",
