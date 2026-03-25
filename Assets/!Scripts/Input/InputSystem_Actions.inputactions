@@ -16,7 +16,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "RightHand_Pos",
+                    "name": "HandPos_R",
                     "type": "Value",
                     "id": "c82a95d3-4af4-4292-8194-2979fa9e7163",
                     "expectedControlType": "Vector3",
@@ -25,7 +25,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "LeftHand_Pos",
+                    "name": "HandPos_L",
                     "type": "Value",
                     "id": "ed003599-ae17-4bc0-a600-036fc6f253f4",
                     "expectedControlType": "Vector3",
@@ -34,7 +34,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "RightHand_Rot",
+                    "name": "HandRot_R",
                     "type": "Value",
                     "id": "0b4d91a2-a46e-4c60-84a5-8b68ac848e19",
                     "expectedControlType": "Quaternion",
@@ -43,7 +43,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "LeftHand_Rot",
+                    "name": "HandRot_L",
                     "type": "Value",
                     "id": "14467f13-1456-4d1e-87cf-afa252d24cb9",
                     "expectedControlType": "Quaternion",
@@ -170,7 +170,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";XR",
-                    "action": "RightHand_Pos",
+                    "action": "HandPos_R",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -181,7 +181,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";XR",
-                    "action": "LeftHand_Pos",
+                    "action": "HandPos_L",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -192,7 +192,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";XR",
-                    "action": "RightHand_Rot",
+                    "action": "HandRot_R",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -203,7 +203,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";XR",
-                    "action": "LeftHand_Rot",
+                    "action": "HandRot_L",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
