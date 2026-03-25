@@ -10,12 +10,16 @@ public class InputReader : InputSystem_Actions.IPlayerActions, InputSystem_Actio
     {
         actions = new InputSystem_Actions();
         actions.Player.SetCallbacks(this);
+        actions.LeftHand.SetCallbacks(this);
+        actions.RightHand.SetCallbacks(this);
         actions.Enable();
     }
 
     public void Disable()
     {
         actions.Player.RemoveCallbacks(this);
+        actions.LeftHand.SetCallbacks(this);
+        actions.RightHand.SetCallbacks(this);
         actions.Disable();
     }
 
@@ -72,6 +76,11 @@ public class InputReader : InputSystem_Actions.IPlayerActions, InputSystem_Actio
             Grab_L?.Invoke();
         else if (context.canceled)
             UnGrab_L?.Invoke();
+    }
+    
+    public void OnTracking(InputAction.CallbackContext context)
+    {
+       Debug.Log(context.ReadValue<int>()); 
     }
     #endregion
 }

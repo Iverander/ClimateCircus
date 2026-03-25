@@ -22,7 +22,7 @@ public class Hand : MonoBehaviour
                     Player.inputReader.onHandPos_R += UpdatePosition;
                     Player.inputReader.onHandRot_R += UpdateRotation;
                     Player.inputReader.Grab_R += Grab;
-                    Player.inputReader.UnGrab_R += UnGrab;
+                    //Player.inputReader.UnGrab_R += UnGrab;
                     break;
                 }
             case Handedness.Left:
@@ -30,7 +30,7 @@ public class Hand : MonoBehaviour
                     Player.inputReader.onHandPos_L += UpdatePosition;
                     Player.inputReader.onHandRot_L += UpdateRotation;
                     Player.inputReader.Grab_L += Grab;
-                    Player.inputReader.UnGrab_L += UnGrab;
+                    //Player.inputReader.UnGrab_L += UnGrab;
                     break;
                 }
         }
@@ -45,22 +45,27 @@ public class Hand : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(toGrab == other)
-            toGrab = null;
+        //if(toGrab == other)
+          
+        //toGrab = null;
     }
 
     [Button]
     void Grab()
     {
-        toGrab = grabbed;
         toGrab.transform.parent = transform;
+        toGrab.isTrigger = true;
+        //toGrab.transform.localPosition = Vector3.zero;
+        toGrab = grabbed;
     }
+    
+    /*
     [Button]
     private void UnGrab()
     {
         grabbed.transform.parent = null;
         grabbed = null;
-    }
+    }*/
     void UpdatePosition(Vector3 pos)
     {
         transform.localPosition = pos;
