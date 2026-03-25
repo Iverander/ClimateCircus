@@ -258,6 +258,7 @@ GameObject:
   - component: {fileID: 539687599}
   - component: {fileID: 539687598}
   - component: {fileID: 539687597}
+  - component: {fileID: 539687601}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -358,6 +359,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &539687601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539687596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -641977634
+      Data2: 1322805747
+      Data3: -167917686
+      Data4: -49619782
+    Path: event:/Slap sound effect
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!43 &1696396101
 Mesh:
   m_ObjectHideFlags: 0
@@ -1857,10 +1889,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7511240183092038318, guid: e179b2679f30226c9b505a8976caeddc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8559767219391874522}
     - targetCorrespondingSourceObject: {fileID: 5232205048770868348, guid: e179b2679f30226c9b505a8976caeddc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8559767219391874521}
@@ -1876,6 +1912,11 @@ GameObject:
 --- !u!1 &8559767219391874518 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5232205048770868348, guid: e179b2679f30226c9b505a8976caeddc, type: 3}
+  m_PrefabInstance: {fileID: 8559767219391874516}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8559767219391874519 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7511240183092038318, guid: e179b2679f30226c9b505a8976caeddc, type: 3}
   m_PrefabInstance: {fileID: 8559767219391874516}
   m_PrefabAsset: {fileID: 0}
 --- !u!54 &8559767219391874520
@@ -1932,6 +1973,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8559767219391874522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8559767219391874519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
