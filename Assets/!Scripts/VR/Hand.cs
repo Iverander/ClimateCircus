@@ -55,12 +55,14 @@ public class Hand : MonoBehaviour
         toGrab = grabbed;
         toGrab.transform.parent = transform;
     }
+    
+    /*
     [Button]
     private void UnGrab()
     {
         grabbed.transform.parent = null;
         grabbed = null;
-    }
+    }*/
     void UpdatePosition(Vector3 pos)
     {
         transform.localPosition = pos;
