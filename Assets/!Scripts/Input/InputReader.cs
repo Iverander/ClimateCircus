@@ -76,7 +76,7 @@ public class InputReader : InputSystem_Actions.IPlayerActions, InputSystem_Actio
     
     public void OnTracking(InputAction.CallbackContext context)
     {
-        throw new NotImplementedException();
+       Debug.Log(context.ReadValue<int>()); 
     }
     #endregion
 }
