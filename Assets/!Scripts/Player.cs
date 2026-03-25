@@ -17,6 +17,13 @@ public class Player : MonoBehaviour
         instance = this;
         rb = GetComponent<Rigidbody>();
         camera = GetComponentInChildren<Camera>();
+        
+        var w = Input.GetJoystickNames();
+
+        foreach (var VARIABLE in w)
+        {
+            Debug.Log(VARIABLE);
+        }
     }
     void OnDestroy()
     {
