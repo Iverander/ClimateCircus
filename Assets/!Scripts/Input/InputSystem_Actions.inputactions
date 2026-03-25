@@ -120,9 +120,9 @@
                     "name": "",
                     "id": "1635d3fe-58b6-4ba9-a4e2-f4b964f6b5c8",
                     "path": "<XRController>{RightHand}/primary2DAxis",
-                    "interactions": "Sector(directions=-1,sweepBehavior=3)",
+                    "interactions": "",
                     "processors": "",
-                    "groups": "XR",
+                    "groups": "",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -695,7 +695,7 @@
                     "path": "<XRController>/pointerPosition",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";XR",
+                    "groups": "",
                     "action": "HandPos",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -706,7 +706,7 @@
                     "path": "<XRController>{RightHand}/devicePosition",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";XR",
+                    "groups": "",
                     "action": "HandPos",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -717,7 +717,7 @@
                     "path": "<XRController>{RightHand}/devicePosition",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";XR",
+                    "groups": "",
                     "action": "HandPos",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -739,7 +739,7 @@
                     "path": "<XRController>{RightHand}/pointerRotation",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";XR",
+                    "groups": "",
                     "action": "HandRot",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -934,33 +934,5 @@
             ]
         }
     ],
-    "controlSchemes": [
-        {
-            "name": "Keyboard&Mouse",
-            "bindingGroup": "Keyboard&Mouse",
-            "devices": [
-                {
-                    "devicePath": "<Keyboard>",
-                    "isOptional": false,
-                    "isOR": false
-                },
-                {
-                    "devicePath": "<Mouse>",
-                    "isOptional": false,
-                    "isOR": false
-                }
-            ]
-        },
-        {
-            "name": "XR",
-            "bindingGroup": "XR",
-            "devices": [
-                {
-                    "devicePath": "<XRController>",
-                    "isOptional": false,
-                    "isOR": false
-                }
-            ]
-        }
-    ]
+    "controlSchemes": []
 }
