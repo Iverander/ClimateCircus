@@ -789,7 +789,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Second"",
                     ""id"": ""262790d7-d0e2-499e-8183-a61ee9f6c540"",
-                    ""path"": ""<XRController>/pointerPosition"",
+                    ""path"": ""<XRController>{RightHand}/devicePosition"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";XR"",
@@ -800,7 +800,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Third"",
                     ""id"": ""8fd77178-2136-4135-87db-33ee34157e57"",
-                    ""path"": ""<XRController>/pointerPosition"",
+                    ""path"": ""<XRController>{RightHand}/devicePosition"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";XR"",
@@ -987,7 +987,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Second"",
                     ""id"": ""b4749c87-cc67-4b6b-9888-83e2a7f0a794"",
-                    ""path"": ""<XRController>{LeftHand}/pointerPosition"",
+                    ""path"": ""<XRController>{LeftHand}/devicePosition"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";XR"",
@@ -998,7 +998,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Third"",
                     ""id"": ""cbb977bb-20a5-4aab-8489-2ebc1e225a5b"",
-                    ""path"": ""<XRController>{LeftHand}/pointerPosition"",
+                    ""path"": ""<XRController>{LeftHand}/devicePosition"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";XR"",
