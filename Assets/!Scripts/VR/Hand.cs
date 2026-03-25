@@ -45,15 +45,17 @@ public class Hand : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(toGrab == other)
-            toGrab = null;
+        //if(toGrab == other)
+          
+        //toGrab = null;
     }
 
     [Button]
     void Grab()
     {
-        toGrab = grabbed;
         toGrab.transform.parent = transform;
+        //toGrab.transform.localPosition = Vector3.zero;
+        toGrab = grabbed;
     }
     
     /*
