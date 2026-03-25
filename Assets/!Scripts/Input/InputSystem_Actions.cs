@@ -855,10 +855,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""8d79bcae-721c-47dd-ac59-e2ad7128fc71"",
-                    ""path"": """",
+                    ""path"": ""<XRController>{RightHand}/gripButton"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";XR"",
                     ""action"": ""Grab"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -886,6 +886,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Grab"",
+                    ""type"": ""Button"",
+                    ""id"": ""eb56311c-f7fa-4189-82df-484a42c9906f"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -932,6 +941,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""action"": ""HandRot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""84f145e1-c8f8-44b2-a6b9-17122fae7f9f"",
+                    ""path"": ""<XRController>{LeftHand}/gripButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";XR"",
+                    ""action"": ""Grab"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": ""Vector 3 Fallback"",
@@ -1034,6 +1054,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_LeftHand = asset.FindActionMap("LeftHand", throwIfNotFound: true);
         m_LeftHand_HandRot = m_LeftHand.FindAction("HandRot", throwIfNotFound: true);
         m_LeftHand_HandPos = m_LeftHand.FindAction("HandPos", throwIfNotFound: true);
+        m_LeftHand_Grab = m_LeftHand.FindAction("Grab", throwIfNotFound: true);
     }
 
     ~@InputSystem_Actions()
@@ -1528,6 +1549,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private List<ILeftHandActions> m_LeftHandActionsCallbackInterfaces = new List<ILeftHandActions>();
     private readonly InputAction m_LeftHand_HandRot;
     private readonly InputAction m_LeftHand_HandPos;
+    private readonly InputAction m_LeftHand_Grab;
     /// <summary>
     /// Provides access to input actions defined in input action map "LeftHand".
     /// </summary>
@@ -1547,6 +1569,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "LeftHand/HandPos".
         /// </summary>
         public InputAction @HandPos => m_Wrapper.m_LeftHand_HandPos;
+        /// <summary>
+        /// Provides access to the underlying input action "LeftHand/Grab".
+        /// </summary>
+        public InputAction @Grab => m_Wrapper.m_LeftHand_Grab;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1579,6 +1605,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @HandPos.started += instance.OnHandPos;
             @HandPos.performed += instance.OnHandPos;
             @HandPos.canceled += instance.OnHandPos;
+            @Grab.started += instance.OnGrab;
+            @Grab.performed += instance.OnGrab;
+            @Grab.canceled += instance.OnGrab;
         }
 
         /// <summary>
@@ -1596,6 +1625,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @HandPos.started -= instance.OnHandPos;
             @HandPos.performed -= instance.OnHandPos;
             @HandPos.canceled -= instance.OnHandPos;
+            @Grab.started -= instance.OnGrab;
+            @Grab.performed -= instance.OnGrab;
+            @Grab.canceled -= instance.OnGrab;
         }
 
         /// <summary>
@@ -1798,5 +1830,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnHandPos(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Grab" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnGrab(InputAction.CallbackContext context);
     }
 }

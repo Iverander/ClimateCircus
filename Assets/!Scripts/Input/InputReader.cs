@@ -25,15 +25,12 @@ public class InputReader : InputSystem_Actions.IPlayerActions, InputSystem_Actio
         onMove?.Invoke(context.ReadValue<Vector2>());
     }
 
+    #region RightController
+    
     public Action<Vector3> onHandPos_R;
     void InputSystem_Actions.IRightHandActions.OnHandPos(InputAction.CallbackContext context)
     {
         onHandPos_R?.Invoke(context.ReadValue<Vector3>());
-    }
-    public Action<Vector3> onHandPos_L;
-    void InputSystem_Actions.ILeftHandActions.OnHandPos(InputAction.CallbackContext context)
-    {
-        onHandPos_L?.Invoke(context.ReadValue<Vector3>());
     }
 
     public Action<Quaternion> onHandRot_R;
@@ -41,9 +38,34 @@ public class InputReader : InputSystem_Actions.IPlayerActions, InputSystem_Actio
     {
         onHandRot_R?.Invoke(context.ReadValue<Quaternion>());
     }
+
+    public Action Grab_R;
+    void InputSystem_Actions.IRightHandActions.OnGrab(InputAction.CallbackContext context)
+    {
+        if(!context.started)return;
+        Grab_R?.Invoke();
+    }
+
+    #endregion
+    
+    
+    #region LeftController
+    public Action<Vector3> onHandPos_L;
+    void InputSystem_Actions.ILeftHandActions.OnHandPos(InputAction.CallbackContext context)
+    {
+        onHandPos_L?.Invoke(context.ReadValue<Vector3>());
+    }
     public Action<Quaternion> onHandRot_L;
     void InputSystem_Actions.ILeftHandActions.OnHandRot(InputAction.CallbackContext context)
     {
         onHandRot_L?.Invoke(context.ReadValue<Quaternion>());
     }
+    
+    public Action Grab_L;
+    void InputSystem_Actions.ILeftHandActions.OnGrab(InputAction.CallbackContext context)
+    {
+        if(!context.started)return;
+        Grab_L?.Invoke();
+    }
+    #endregion
 }
