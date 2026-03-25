@@ -40,10 +40,13 @@ public class InputReader : InputSystem_Actions.IPlayerActions, InputSystem_Actio
     }
 
     public Action Grab_R;
+    public Action UnGrab_R;
     void InputSystem_Actions.IRightHandActions.OnGrab(InputAction.CallbackContext context)
     {
-        if(!context.started)return;
-        Grab_R?.Invoke();
+        if(context.started)
+            Grab_R?.Invoke();
+        else if (context.canceled)
+            UnGrab_R?.Invoke();
     }
 
     #endregion
@@ -62,10 +65,13 @@ public class InputReader : InputSystem_Actions.IPlayerActions, InputSystem_Actio
     }
     
     public Action Grab_L;
+    public Action UnGrab_L;
     void InputSystem_Actions.ILeftHandActions.OnGrab(InputAction.CallbackContext context)
     {
-        if(!context.started)return;
-        Grab_L?.Invoke();
+        if(context.started)
+            Grab_L?.Invoke();
+        else if (context.canceled)
+            UnGrab_L?.Invoke();
     }
     #endregion
 }
