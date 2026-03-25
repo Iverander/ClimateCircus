@@ -32,11 +32,11 @@ public class Hand : MonoBehaviour
 
     void UpdatePosition(Vector3 pos)
     {
-        transform.position = pos;
+        transform.localPosition = pos;
     }
     void UpdateRotation(Quaternion rot)
     {
-        transform.rotation = rot;
+        transform.localRotation = rot;
     }
 
 }

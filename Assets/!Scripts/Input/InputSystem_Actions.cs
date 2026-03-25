@@ -100,42 +100,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""HandPos_R"",
-                    ""type"": ""Value"",
-                    ""id"": ""c82a95d3-4af4-4292-8194-2979fa9e7163"",
-                    ""expectedControlType"": ""Vector3"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""HandPos_L"",
-                    ""type"": ""Value"",
-                    ""id"": ""d957dbf2-8c9a-45b1-aa50-8ae86fe7fc67"",
-                    ""expectedControlType"": ""Vector3"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""HandRot_R"",
-                    ""type"": ""Value"",
-                    ""id"": ""0b4d91a2-a46e-4c60-84a5-8b68ac848e19"",
-                    ""expectedControlType"": ""Quaternion"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""HandRot_L"",
-                    ""type"": ""Value"",
-                    ""id"": ""c09c9b32-2bf4-4fcd-8bbc-1df4ea7038c9"",
-                    ""expectedControlType"": ""Quaternion"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -248,182 +212,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""Vector 3 Fallback"",
-                    ""id"": ""db6b0027-0948-4d9c-9d63-a4797bcab6cc"",
-                    ""path"": ""Vector3Fallback"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""HandPos_R"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""first"",
-                    ""id"": ""a113c552-a289-4aeb-951b-8b1a84aac0d3"",
-                    ""path"": ""<XRController>/pointerPosition"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""HandPos_R"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Second"",
-                    ""id"": ""01de46f0-f8c9-41d5-94b8-e1a1a1c88290"",
-                    ""path"": ""<XRController>/pointerPosition"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""HandPos_R"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Third"",
-                    ""id"": ""abfa6e9d-06ac-4e17-a8ef-3a5b67f6267b"",
-                    ""path"": ""<XRController>/pointerPosition"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""HandPos_R"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Vector 3 Fallback"",
-                    ""id"": ""f044218c-314e-486d-b33c-86965b57b39a"",
-                    ""path"": ""Vector3Fallback"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""HandPos_L"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""first"",
-                    ""id"": ""4f5b9e64-4790-40c1-a423-debdf8bfd8a5"",
-                    ""path"": ""<XRController>{LeftHand}/pointerPosition"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""HandPos_L"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Second"",
-                    ""id"": ""e92caaa7-9013-4d4d-b2ec-08f31bfea5d6"",
-                    ""path"": ""<XRController>{LeftHand}/pointerPosition"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""HandPos_L"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Third"",
-                    ""id"": ""bf117ffd-31b1-4acc-97c1-24c270644d40"",
-                    ""path"": ""<XRController>{LeftHand}/pointerPosition"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""HandPos_L"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Quaternion Fallback"",
-                    ""id"": ""abab63f4-f454-4711-9bbe-1273404e84ed"",
-                    ""path"": ""QuaternionFallback"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""HandRot_R"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""first"",
-                    ""id"": ""26be799d-7b0b-4ef1-ad9f-08480136e4b7"",
-                    ""path"": ""<XRController>{RightHand}/pointerRotation"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""HandRot_R"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Second"",
-                    ""id"": ""8176f46e-165f-4a12-b88b-9b641419c2e7"",
-                    ""path"": ""<XRController>{RightHand}/pointerRotation"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""HandRot_R"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Third"",
-                    ""id"": ""93e3da3f-1f16-43d4-8588-88229e4f93c5"",
-                    ""path"": ""<XRController>{RightHand}/pointerRotation"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""HandRot_R"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Quaternion Fallback"",
-                    ""id"": ""d3721cf2-31b0-40bd-97b9-356acb1eab5d"",
-                    ""path"": ""QuaternionFallback"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""HandRot_L"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""first"",
-                    ""id"": ""0e91127b-e5e1-496c-94fc-987b8485de13"",
-                    ""path"": ""<XRController>{LeftHand}/pointerRotation"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""HandRot_L"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Second"",
-                    ""id"": ""a1499c06-1457-41d2-9bd7-dba02f891455"",
-                    ""path"": ""<XRController>{LeftHand}/pointerRotation"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""HandRot_L"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Third"",
-                    ""id"": ""6d110fa9-3f13-4f13-986a-33fe9abe6293"",
-                    ""path"": ""<XRController>{LeftHand}/pointerRotation"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""HandRot_L"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 }
             ]
         },
@@ -942,6 +730,254 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""RightHand"",
+            ""id"": ""64bb4c3a-e1a9-4364-b8e6-47be9ab69696"",
+            ""actions"": [
+                {
+                    ""name"": ""HandPos"",
+                    ""type"": ""Value"",
+                    ""id"": ""54c429e9-c1ca-4572-8c1a-fc4f5200b54a"",
+                    ""expectedControlType"": ""Vector3"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""HandRot"",
+                    ""type"": ""Value"",
+                    ""id"": ""52529e5a-5aa7-4420-9567-e057b7222c0b"",
+                    ""expectedControlType"": ""Quaternion"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Grab"",
+                    ""type"": ""Button"",
+                    ""id"": ""ef378fc3-26ff-470e-becc-d3dbb0d91f4b"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""Vector 3 Fallback"",
+                    ""id"": ""1656c172-909c-4679-9ead-12367f1eac12"",
+                    ""path"": ""Vector3Fallback"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HandPos"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""first"",
+                    ""id"": ""7c80fd4b-a97f-43d6-9c72-48dd5200681c"",
+                    ""path"": ""<XRController>/pointerPosition"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";XR"",
+                    ""action"": ""HandPos"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Second"",
+                    ""id"": ""262790d7-d0e2-499e-8183-a61ee9f6c540"",
+                    ""path"": ""<XRController>/pointerPosition"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";XR"",
+                    ""action"": ""HandPos"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Third"",
+                    ""id"": ""8fd77178-2136-4135-87db-33ee34157e57"",
+                    ""path"": ""<XRController>/pointerPosition"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";XR"",
+                    ""action"": ""HandPos"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Quaternion Fallback"",
+                    ""id"": ""5ef8fd9f-5a87-4a9c-9fa0-c891af1d1881"",
+                    ""path"": ""QuaternionFallback"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HandRot"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""first"",
+                    ""id"": ""12322aec-cbfd-4750-9a47-56d9ece57ad3"",
+                    ""path"": ""<XRController>{RightHand}/pointerRotation"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";XR"",
+                    ""action"": ""HandRot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Second"",
+                    ""id"": ""498aa6a4-affe-4bdf-b406-15f8a4b487e4"",
+                    ""path"": ""<XRController>{RightHand}/pointerRotation"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";XR"",
+                    ""action"": ""HandRot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Third"",
+                    ""id"": ""3da2f478-185a-4bbe-a507-8f4843daaf7e"",
+                    ""path"": ""<XRController>{RightHand}/pointerRotation"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";XR"",
+                    ""action"": ""HandRot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8d79bcae-721c-47dd-ac59-e2ad7128fc71"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Grab"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""LeftHand"",
+            ""id"": ""52eb2400-0e8a-4c3b-b778-3dbfd56cad97"",
+            ""actions"": [
+                {
+                    ""name"": ""HandRot"",
+                    ""type"": ""Value"",
+                    ""id"": ""5f1ba944-5dd6-48b9-94dc-11c5d26ffbbd"",
+                    ""expectedControlType"": ""Quaternion"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""HandPos"",
+                    ""type"": ""Value"",
+                    ""id"": ""4f2f790d-f981-43a4-aca4-933d0304a628"",
+                    ""expectedControlType"": ""Vector3"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""Quaternion Fallback"",
+                    ""id"": ""0dd18d23-9340-4efa-80b9-e4ed4faa0bb6"",
+                    ""path"": ""QuaternionFallback"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HandRot"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""first"",
+                    ""id"": ""b100e433-033d-44c1-a4c8-56d272b442c2"",
+                    ""path"": ""<XRController>{LeftHand}/pointerRotation"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";XR"",
+                    ""action"": ""HandRot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Second"",
+                    ""id"": ""9f4c245b-f628-4cca-9eea-0738073eda37"",
+                    ""path"": ""<XRController>{LeftHand}/pointerRotation"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";XR"",
+                    ""action"": ""HandRot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Third"",
+                    ""id"": ""389a0c87-8e6f-4c18-9b12-302f306b7e2b"",
+                    ""path"": ""<XRController>{LeftHand}/pointerRotation"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";XR"",
+                    ""action"": ""HandRot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Vector 3 Fallback"",
+                    ""id"": ""54448e5c-c55f-42fe-a3a9-06c0b5d61393"",
+                    ""path"": ""Vector3Fallback"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HandPos"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""first"",
+                    ""id"": ""3c977534-08cc-4b2f-8104-bf25a5cd4f9e"",
+                    ""path"": ""<XRController>{LeftHand}/pointerPosition"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";XR"",
+                    ""action"": ""HandPos"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Second"",
+                    ""id"": ""b4749c87-cc67-4b6b-9888-83e2a7f0a794"",
+                    ""path"": ""<XRController>{LeftHand}/pointerPosition"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";XR"",
+                    ""action"": ""HandPos"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Third"",
+                    ""id"": ""cbb977bb-20a5-4aab-8489-2ebc1e225a5b"",
+                    ""path"": ""<XRController>{LeftHand}/pointerPosition"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";XR"",
+                    ""action"": ""HandPos"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -977,10 +1013,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
-        m_Player_HandPos_R = m_Player.FindAction("HandPos_R", throwIfNotFound: true);
-        m_Player_HandPos_L = m_Player.FindAction("HandPos_L", throwIfNotFound: true);
-        m_Player_HandRot_R = m_Player.FindAction("HandRot_R", throwIfNotFound: true);
-        m_Player_HandRot_L = m_Player.FindAction("HandRot_L", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -993,12 +1025,23 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_UI_ScrollWheel = m_UI.FindAction("ScrollWheel", throwIfNotFound: true);
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
+        // RightHand
+        m_RightHand = asset.FindActionMap("RightHand", throwIfNotFound: true);
+        m_RightHand_HandPos = m_RightHand.FindAction("HandPos", throwIfNotFound: true);
+        m_RightHand_HandRot = m_RightHand.FindAction("HandRot", throwIfNotFound: true);
+        m_RightHand_Grab = m_RightHand.FindAction("Grab", throwIfNotFound: true);
+        // LeftHand
+        m_LeftHand = asset.FindActionMap("LeftHand", throwIfNotFound: true);
+        m_LeftHand_HandRot = m_LeftHand.FindAction("HandRot", throwIfNotFound: true);
+        m_LeftHand_HandPos = m_LeftHand.FindAction("HandPos", throwIfNotFound: true);
     }
 
     ~@InputSystem_Actions()
     {
         UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, InputSystem_Actions.Player.Disable() has not been called.");
         UnityEngine.Debug.Assert(!m_UI.enabled, "This will cause a leak and performance issues, InputSystem_Actions.UI.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_RightHand.enabled, "This will cause a leak and performance issues, InputSystem_Actions.RightHand.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_LeftHand.enabled, "This will cause a leak and performance issues, InputSystem_Actions.LeftHand.Disable() has not been called.");
     }
 
     /// <summary>
@@ -1075,10 +1118,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Move;
-    private readonly InputAction m_Player_HandPos_R;
-    private readonly InputAction m_Player_HandPos_L;
-    private readonly InputAction m_Player_HandRot_R;
-    private readonly InputAction m_Player_HandRot_L;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -1094,22 +1133,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/Move".
         /// </summary>
         public InputAction @Move => m_Wrapper.m_Player_Move;
-        /// <summary>
-        /// Provides access to the underlying input action "Player/HandPos_R".
-        /// </summary>
-        public InputAction @HandPos_R => m_Wrapper.m_Player_HandPos_R;
-        /// <summary>
-        /// Provides access to the underlying input action "Player/HandPos_L".
-        /// </summary>
-        public InputAction @HandPos_L => m_Wrapper.m_Player_HandPos_L;
-        /// <summary>
-        /// Provides access to the underlying input action "Player/HandRot_R".
-        /// </summary>
-        public InputAction @HandRot_R => m_Wrapper.m_Player_HandRot_R;
-        /// <summary>
-        /// Provides access to the underlying input action "Player/HandRot_L".
-        /// </summary>
-        public InputAction @HandRot_L => m_Wrapper.m_Player_HandRot_L;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1139,18 +1162,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Move.started += instance.OnMove;
             @Move.performed += instance.OnMove;
             @Move.canceled += instance.OnMove;
-            @HandPos_R.started += instance.OnHandPos_R;
-            @HandPos_R.performed += instance.OnHandPos_R;
-            @HandPos_R.canceled += instance.OnHandPos_R;
-            @HandPos_L.started += instance.OnHandPos_L;
-            @HandPos_L.performed += instance.OnHandPos_L;
-            @HandPos_L.canceled += instance.OnHandPos_L;
-            @HandRot_R.started += instance.OnHandRot_R;
-            @HandRot_R.performed += instance.OnHandRot_R;
-            @HandRot_R.canceled += instance.OnHandRot_R;
-            @HandRot_L.started += instance.OnHandRot_L;
-            @HandRot_L.performed += instance.OnHandRot_L;
-            @HandRot_L.canceled += instance.OnHandRot_L;
         }
 
         /// <summary>
@@ -1165,18 +1176,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Move.started -= instance.OnMove;
             @Move.performed -= instance.OnMove;
             @Move.canceled -= instance.OnMove;
-            @HandPos_R.started -= instance.OnHandPos_R;
-            @HandPos_R.performed -= instance.OnHandPos_R;
-            @HandPos_R.canceled -= instance.OnHandPos_R;
-            @HandPos_L.started -= instance.OnHandPos_L;
-            @HandPos_L.performed -= instance.OnHandPos_L;
-            @HandPos_L.canceled -= instance.OnHandPos_L;
-            @HandRot_R.started -= instance.OnHandRot_R;
-            @HandRot_R.performed -= instance.OnHandRot_R;
-            @HandRot_R.canceled -= instance.OnHandRot_R;
-            @HandRot_L.started -= instance.OnHandRot_L;
-            @HandRot_L.performed -= instance.OnHandRot_L;
-            @HandRot_L.canceled -= instance.OnHandRot_L;
         }
 
         /// <summary>
@@ -1405,6 +1404,231 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     /// Provides a new <see cref="UIActions" /> instance referencing this action map.
     /// </summary>
     public UIActions @UI => new UIActions(this);
+
+    // RightHand
+    private readonly InputActionMap m_RightHand;
+    private List<IRightHandActions> m_RightHandActionsCallbackInterfaces = new List<IRightHandActions>();
+    private readonly InputAction m_RightHand_HandPos;
+    private readonly InputAction m_RightHand_HandRot;
+    private readonly InputAction m_RightHand_Grab;
+    /// <summary>
+    /// Provides access to input actions defined in input action map "RightHand".
+    /// </summary>
+    public struct RightHandActions
+    {
+        private @InputSystem_Actions m_Wrapper;
+
+        /// <summary>
+        /// Construct a new instance of the input action map wrapper class.
+        /// </summary>
+        public RightHandActions(@InputSystem_Actions wrapper) { m_Wrapper = wrapper; }
+        /// <summary>
+        /// Provides access to the underlying input action "RightHand/HandPos".
+        /// </summary>
+        public InputAction @HandPos => m_Wrapper.m_RightHand_HandPos;
+        /// <summary>
+        /// Provides access to the underlying input action "RightHand/HandRot".
+        /// </summary>
+        public InputAction @HandRot => m_Wrapper.m_RightHand_HandRot;
+        /// <summary>
+        /// Provides access to the underlying input action "RightHand/Grab".
+        /// </summary>
+        public InputAction @Grab => m_Wrapper.m_RightHand_Grab;
+        /// <summary>
+        /// Provides access to the underlying input action map instance.
+        /// </summary>
+        public InputActionMap Get() { return m_Wrapper.m_RightHand; }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+        public void Enable() { Get().Enable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+        public void Disable() { Get().Disable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+        public bool enabled => Get().enabled;
+        /// <summary>
+        /// Implicitly converts an <see ref="RightHandActions" /> to an <see ref="InputActionMap" /> instance.
+        /// </summary>
+        public static implicit operator InputActionMap(RightHandActions set) { return set.Get(); }
+        /// <summary>
+        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <param name="instance">Callback instance.</param>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+        /// </remarks>
+        /// <seealso cref="RightHandActions" />
+        public void AddCallbacks(IRightHandActions instance)
+        {
+            if (instance == null || m_Wrapper.m_RightHandActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_RightHandActionsCallbackInterfaces.Add(instance);
+            @HandPos.started += instance.OnHandPos;
+            @HandPos.performed += instance.OnHandPos;
+            @HandPos.canceled += instance.OnHandPos;
+            @HandRot.started += instance.OnHandRot;
+            @HandRot.performed += instance.OnHandRot;
+            @HandRot.canceled += instance.OnHandRot;
+            @Grab.started += instance.OnGrab;
+            @Grab.performed += instance.OnGrab;
+            @Grab.canceled += instance.OnGrab;
+        }
+
+        /// <summary>
+        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <remarks>
+        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+        /// </remarks>
+        /// <seealso cref="RightHandActions" />
+        private void UnregisterCallbacks(IRightHandActions instance)
+        {
+            @HandPos.started -= instance.OnHandPos;
+            @HandPos.performed -= instance.OnHandPos;
+            @HandPos.canceled -= instance.OnHandPos;
+            @HandRot.started -= instance.OnHandRot;
+            @HandRot.performed -= instance.OnHandRot;
+            @HandRot.canceled -= instance.OnHandRot;
+            @Grab.started -= instance.OnGrab;
+            @Grab.performed -= instance.OnGrab;
+            @Grab.canceled -= instance.OnGrab;
+        }
+
+        /// <summary>
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="RightHandActions.UnregisterCallbacks(IRightHandActions)" />.
+        /// </summary>
+        /// <seealso cref="RightHandActions.UnregisterCallbacks(IRightHandActions)" />
+        public void RemoveCallbacks(IRightHandActions instance)
+        {
+            if (m_Wrapper.m_RightHandActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        /// <summary>
+        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+        /// </summary>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+        /// </remarks>
+        /// <seealso cref="RightHandActions.AddCallbacks(IRightHandActions)" />
+        /// <seealso cref="RightHandActions.RemoveCallbacks(IRightHandActions)" />
+        /// <seealso cref="RightHandActions.UnregisterCallbacks(IRightHandActions)" />
+        public void SetCallbacks(IRightHandActions instance)
+        {
+            foreach (var item in m_Wrapper.m_RightHandActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_RightHandActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    /// <summary>
+    /// Provides a new <see cref="RightHandActions" /> instance referencing this action map.
+    /// </summary>
+    public RightHandActions @RightHand => new RightHandActions(this);
+
+    // LeftHand
+    private readonly InputActionMap m_LeftHand;
+    private List<ILeftHandActions> m_LeftHandActionsCallbackInterfaces = new List<ILeftHandActions>();
+    private readonly InputAction m_LeftHand_HandRot;
+    private readonly InputAction m_LeftHand_HandPos;
+    /// <summary>
+    /// Provides access to input actions defined in input action map "LeftHand".
+    /// </summary>
+    public struct LeftHandActions
+    {
+        private @InputSystem_Actions m_Wrapper;
+
+        /// <summary>
+        /// Construct a new instance of the input action map wrapper class.
+        /// </summary>
+        public LeftHandActions(@InputSystem_Actions wrapper) { m_Wrapper = wrapper; }
+        /// <summary>
+        /// Provides access to the underlying input action "LeftHand/HandRot".
+        /// </summary>
+        public InputAction @HandRot => m_Wrapper.m_LeftHand_HandRot;
+        /// <summary>
+        /// Provides access to the underlying input action "LeftHand/HandPos".
+        /// </summary>
+        public InputAction @HandPos => m_Wrapper.m_LeftHand_HandPos;
+        /// <summary>
+        /// Provides access to the underlying input action map instance.
+        /// </summary>
+        public InputActionMap Get() { return m_Wrapper.m_LeftHand; }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+        public void Enable() { Get().Enable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+        public void Disable() { Get().Disable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+        public bool enabled => Get().enabled;
+        /// <summary>
+        /// Implicitly converts an <see ref="LeftHandActions" /> to an <see ref="InputActionMap" /> instance.
+        /// </summary>
+        public static implicit operator InputActionMap(LeftHandActions set) { return set.Get(); }
+        /// <summary>
+        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <param name="instance">Callback instance.</param>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+        /// </remarks>
+        /// <seealso cref="LeftHandActions" />
+        public void AddCallbacks(ILeftHandActions instance)
+        {
+            if (instance == null || m_Wrapper.m_LeftHandActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_LeftHandActionsCallbackInterfaces.Add(instance);
+            @HandRot.started += instance.OnHandRot;
+            @HandRot.performed += instance.OnHandRot;
+            @HandRot.canceled += instance.OnHandRot;
+            @HandPos.started += instance.OnHandPos;
+            @HandPos.performed += instance.OnHandPos;
+            @HandPos.canceled += instance.OnHandPos;
+        }
+
+        /// <summary>
+        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <remarks>
+        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+        /// </remarks>
+        /// <seealso cref="LeftHandActions" />
+        private void UnregisterCallbacks(ILeftHandActions instance)
+        {
+            @HandRot.started -= instance.OnHandRot;
+            @HandRot.performed -= instance.OnHandRot;
+            @HandRot.canceled -= instance.OnHandRot;
+            @HandPos.started -= instance.OnHandPos;
+            @HandPos.performed -= instance.OnHandPos;
+            @HandPos.canceled -= instance.OnHandPos;
+        }
+
+        /// <summary>
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="LeftHandActions.UnregisterCallbacks(ILeftHandActions)" />.
+        /// </summary>
+        /// <seealso cref="LeftHandActions.UnregisterCallbacks(ILeftHandActions)" />
+        public void RemoveCallbacks(ILeftHandActions instance)
+        {
+            if (m_Wrapper.m_LeftHandActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        /// <summary>
+        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+        /// </summary>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+        /// </remarks>
+        /// <seealso cref="LeftHandActions.AddCallbacks(ILeftHandActions)" />
+        /// <seealso cref="LeftHandActions.RemoveCallbacks(ILeftHandActions)" />
+        /// <seealso cref="LeftHandActions.UnregisterCallbacks(ILeftHandActions)" />
+        public void SetCallbacks(ILeftHandActions instance)
+        {
+            foreach (var item in m_Wrapper.m_LeftHandActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_LeftHandActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    /// <summary>
+    /// Provides a new <see cref="LeftHandActions" /> instance referencing this action map.
+    /// </summary>
+    public LeftHandActions @LeftHand => new LeftHandActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     /// <summary>
     /// Provides access to the input control scheme.
@@ -1445,34 +1669,6 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMove(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "HandPos_R" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnHandPos_R(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "HandPos_L" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnHandPos_L(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "HandRot_R" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnHandRot_R(InputAction.CallbackContext context);
-        /// <summary>
-        /// Method invoked when associated input action "HandRot_L" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-        /// </summary>
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnHandRot_L(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.
@@ -1551,5 +1747,56 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
+    }
+    /// <summary>
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "RightHand" which allows adding and removing callbacks.
+    /// </summary>
+    /// <seealso cref="RightHandActions.AddCallbacks(IRightHandActions)" />
+    /// <seealso cref="RightHandActions.RemoveCallbacks(IRightHandActions)" />
+    public interface IRightHandActions
+    {
+        /// <summary>
+        /// Method invoked when associated input action "HandPos" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnHandPos(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "HandRot" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnHandRot(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Grab" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnGrab(InputAction.CallbackContext context);
+    }
+    /// <summary>
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "LeftHand" which allows adding and removing callbacks.
+    /// </summary>
+    /// <seealso cref="LeftHandActions.AddCallbacks(ILeftHandActions)" />
+    /// <seealso cref="LeftHandActions.RemoveCallbacks(ILeftHandActions)" />
+    public interface ILeftHandActions
+    {
+        /// <summary>
+        /// Method invoked when associated input action "HandRot" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnHandRot(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "HandPos" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnHandPos(InputAction.CallbackContext context);
     }
 }
