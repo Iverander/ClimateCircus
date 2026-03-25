@@ -54,6 +54,7 @@ public class Hand : MonoBehaviour
     void Grab()
     {
         toGrab.transform.parent = transform;
+        toGrab.isTrigger = true;
         //toGrab.transform.localPosition = Vector3.zero;
         toGrab = grabbed;
     }
