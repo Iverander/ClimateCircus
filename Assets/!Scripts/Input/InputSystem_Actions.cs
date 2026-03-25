@@ -206,9 +206,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""1635d3fe-58b6-4ba9-a4e2-f4b964f6b5c8"",
                     ""path"": ""<XRController>{RightHand}/primary2DAxis"",
-                    ""interactions"": """",
+                    ""interactions"": ""Sector(directions=-1,sweepBehavior=3)"",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""XR"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -781,7 +781,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""path"": ""<XRController>/pointerPosition"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";XR"",
                     ""action"": ""HandPos"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -789,10 +789,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Second"",
                     ""id"": ""262790d7-d0e2-499e-8183-a61ee9f6c540"",
-                    ""path"": ""<XRController>{RightHand}/devicePosition"",
+                    ""path"": ""<XRController>/pointerPosition"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";XR"",
                     ""action"": ""HandPos"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -800,10 +800,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Third"",
                     ""id"": ""8fd77178-2136-4135-87db-33ee34157e57"",
-                    ""path"": ""<XRController>{RightHand}/devicePosition"",
+                    ""path"": ""<XRController>/pointerPosition"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";XR"",
                     ""action"": ""HandPos"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -825,7 +825,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""path"": ""<XRController>{RightHand}/pointerRotation"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";XR"",
                     ""action"": ""HandRot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -987,7 +987,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Second"",
                     ""id"": ""b4749c87-cc67-4b6b-9888-83e2a7f0a794"",
-                    ""path"": ""<XRController>{LeftHand}/devicePosition"",
+                    ""path"": ""<XRController>{LeftHand}/pointerPosition"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";XR"",
@@ -998,7 +998,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Third"",
                     ""id"": ""cbb977bb-20a5-4aab-8489-2ebc1e225a5b"",
-                    ""path"": ""<XRController>{LeftHand}/devicePosition"",
+                    ""path"": ""<XRController>{LeftHand}/pointerPosition"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";XR"",
@@ -1020,7 +1020,35 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             ]
         }
     ],
-    ""controlSchemes"": []
+    ""controlSchemes"": [
+        {
+            ""name"": ""Keyboard&Mouse"",
+            ""bindingGroup"": ""Keyboard&Mouse"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<Mouse>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""XR"",
+            ""bindingGroup"": ""XR"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<XRController>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        }
+    ]
 }");
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
@@ -1665,6 +1693,32 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     /// Provides a new <see cref="LeftHandActions" /> instance referencing this action map.
     /// </summary>
     public LeftHandActions @LeftHand => new LeftHandActions(this);
+    private int m_KeyboardMouseSchemeIndex = -1;
+    /// <summary>
+    /// Provides access to the input control scheme.
+    /// </summary>
+    /// <seealso cref="UnityEngine.InputSystem.InputControlScheme" />
+    public InputControlScheme KeyboardMouseScheme
+    {
+        get
+        {
+            if (m_KeyboardMouseSchemeIndex == -1) m_KeyboardMouseSchemeIndex = asset.FindControlSchemeIndex("Keyboard&Mouse");
+            return asset.controlSchemes[m_KeyboardMouseSchemeIndex];
+        }
+    }
+    private int m_XRSchemeIndex = -1;
+    /// <summary>
+    /// Provides access to the input control scheme.
+    /// </summary>
+    /// <seealso cref="UnityEngine.InputSystem.InputControlScheme" />
+    public InputControlScheme XRScheme
+    {
+        get
+        {
+            if (m_XRSchemeIndex == -1) m_XRSchemeIndex = asset.FindControlSchemeIndex("XR");
+            return asset.controlSchemes[m_XRSchemeIndex];
+        }
+    }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Player" which allows adding and removing callbacks.
     /// </summary>
