@@ -809,6 +809,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Tracking",
+                    "type": "Value",
+                    "id": "ac1acfe8-3a4c-4aba-a7cc-e9552cf7baf6",
+                    "expectedControlType": "Integer",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -910,6 +919,17 @@
                     "action": "HandPos",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "e717ac38-be50-40a3-923c-a64783cc3565",
+                    "path": "<XRController>/trackingState",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";XR",
+                    "action": "Tracking",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

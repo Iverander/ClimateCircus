@@ -895,6 +895,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Tracking"",
+                    ""type"": ""Value"",
+                    ""id"": ""ac1acfe8-3a4c-4aba-a7cc-e9552cf7baf6"",
+                    ""expectedControlType"": ""Integer"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -996,6 +1005,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""action"": ""HandPos"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e717ac38-be50-40a3-923c-a64783cc3565"",
+                    ""path"": ""<XRController>/trackingState"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";XR"",
+                    ""action"": ""Tracking"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -1055,6 +1075,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_LeftHand_HandRot = m_LeftHand.FindAction("HandRot", throwIfNotFound: true);
         m_LeftHand_HandPos = m_LeftHand.FindAction("HandPos", throwIfNotFound: true);
         m_LeftHand_Grab = m_LeftHand.FindAction("Grab", throwIfNotFound: true);
+        m_LeftHand_Tracking = m_LeftHand.FindAction("Tracking", throwIfNotFound: true);
     }
 
     ~@InputSystem_Actions()
@@ -1550,6 +1571,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_LeftHand_HandRot;
     private readonly InputAction m_LeftHand_HandPos;
     private readonly InputAction m_LeftHand_Grab;
+    private readonly InputAction m_LeftHand_Tracking;
     /// <summary>
     /// Provides access to input actions defined in input action map "LeftHand".
     /// </summary>
@@ -1573,6 +1595,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "LeftHand/Grab".
         /// </summary>
         public InputAction @Grab => m_Wrapper.m_LeftHand_Grab;
+        /// <summary>
+        /// Provides access to the underlying input action "LeftHand/Tracking".
+        /// </summary>
+        public InputAction @Tracking => m_Wrapper.m_LeftHand_Tracking;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1608,6 +1634,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Grab.started += instance.OnGrab;
             @Grab.performed += instance.OnGrab;
             @Grab.canceled += instance.OnGrab;
+            @Tracking.started += instance.OnTracking;
+            @Tracking.performed += instance.OnTracking;
+            @Tracking.canceled += instance.OnTracking;
         }
 
         /// <summary>
@@ -1628,6 +1657,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Grab.started -= instance.OnGrab;
             @Grab.performed -= instance.OnGrab;
             @Grab.canceled -= instance.OnGrab;
+            @Tracking.started -= instance.OnTracking;
+            @Tracking.performed -= instance.OnTracking;
+            @Tracking.canceled -= instance.OnTracking;
         }
 
         /// <summary>
@@ -1837,5 +1869,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnGrab(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Tracking" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnTracking(InputAction.CallbackContext context);
     }
 }

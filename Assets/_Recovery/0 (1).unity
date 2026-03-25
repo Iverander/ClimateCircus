@@ -1889,10 +1889,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 2488320088862606358, guid: e179b2679f30226c9b505a8976caeddc, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     m_RemovedGameObjects: []
@@ -1904,9 +1900,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5232205048770868348, guid: e179b2679f30226c9b505a8976caeddc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8559767219391874521}
-    - targetCorrespondingSourceObject: {fileID: 5232205048770868348, guid: e179b2679f30226c9b505a8976caeddc, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8559767219391874523}
     - targetCorrespondingSourceObject: {fileID: 2139193190420981218, guid: e179b2679f30226c9b505a8976caeddc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8559767219391874520}
@@ -1994,75 +1987,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
   nonRigidbodyVelocity: 0
   attenuationObject: {fileID: 0}
---- !u!114 &8559767219391874523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8559767219391874518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2fadf230d1919748a9aa21d40f74619, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.XR.TrackedPoseDriver
-  m_TrackingType: 0
-  m_UpdateType: 0
-  m_IgnoreTrackingState: 0
-  m_PositionInput:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Position
-      m_Type: 0
-      m_ExpectedControlType: Vector3
-      m_Id: e3e9c493-4546-46d3-877c-e72474d66059
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: -3332645495417896894, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  m_RotationInput:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Rotation
-      m_Type: 0
-      m_ExpectedControlType: Quaternion
-      m_Id: 61d5c2ed-6461-422b-9021-ea3fe3ddba8f
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: -6868088779094483510, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  m_TrackingStateInput:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Tracking State
-      m_Type: 0
-      m_ExpectedControlType: Integer
-      m_Id: f508afc4-2ca4-4048-83a7-723b4a2754a0
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 5201013573328163898, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  m_PositionAction:
-    m_Name: 
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 13c5f7c7-7ca4-4691-a598-4e70d4d7884f
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  m_RotationAction:
-    m_Name: 
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: e2ab0581-0542-4390-9cc7-e74fead55bad
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
