@@ -73,5 +73,10 @@ public class InputReader : InputSystem_Actions.IPlayerActions, InputSystem_Actio
         else if (context.canceled)
             UnGrab_L?.Invoke();
     }
+    
+    public void OnTracking(InputAction.CallbackContext context)
+    {
+        throw new NotImplementedException();
+    }
     #endregion
 }
