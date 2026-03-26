@@ -93,6 +93,7 @@ MonoBehaviour:
   m_Name: MetaXRFeature Standalone
   m_EditorClassIdentifier: Oculus.VR::Meta.XR.MetaXRFeature
   m_enabled: 0
+  <failedInitialization>k__BackingField: 0
   nameUi: Meta XR Feature
   version: 0.0.1
   featureIdInternal: com.meta.openxr.feature.metaxr
@@ -188,6 +189,7 @@ MonoBehaviour:
   m_Name: MetaXREyeTrackedFoveationFeature Standalone
   m_EditorClassIdentifier: Oculus.VR::Meta.XR.MetaXREyeTrackedFoveationFeature
   m_enabled: 0
+  <failedInitialization>k__BackingField: 0
   nameUi: Meta XR Eye Tracked Foveation
   version: 0.0.1
   featureIdInternal: com.meta.openxr.feature.eyetrackedfoveation
@@ -268,6 +270,7 @@ MonoBehaviour:
   m_Name: MetaXRSubsampledLayout Standalone
   m_EditorClassIdentifier: Oculus.VR::Meta.XR.MetaXRSubsampledLayout
   m_enabled: 0
+  <failedInitialization>k__BackingField: 0
   nameUi: Meta XR Subsampled Layout
   version: 0.0.1
   featureIdInternal: com.meta.openxr.feature.subsampledLayout
@@ -404,6 +407,7 @@ MonoBehaviour:
   m_Name: MetaXRSpaceWarp Android
   m_EditorClassIdentifier: Oculus.VR::Meta.XR.MetaXRSpaceWarp
   m_enabled: 0
+  <failedInitialization>k__BackingField: 0
   nameUi: Meta XR Space Warp
   version: 1.0.0
   featureIdInternal: com.meta.openxr.feature.spacewarp
@@ -1113,6 +1117,7 @@ MonoBehaviour:
   m_Name: MetaXRFoveationFeature Standalone
   m_EditorClassIdentifier: Oculus.VR::Meta.XR.MetaXRFoveationFeature
   m_enabled: 0
+  <failedInitialization>k__BackingField: 0
   nameUi: Meta XR Foveation
   version: 1.0.0
   featureIdInternal: com.meta.openxr.feature.foveation
@@ -1403,6 +1408,7 @@ MonoBehaviour:
   m_Name: MetaXRFeature Android
   m_EditorClassIdentifier: Oculus.VR::Meta.XR.MetaXRFeature
   m_enabled: 0
+  <failedInitialization>k__BackingField: 0
   nameUi: Meta XR Feature
   version: 0.0.1
   featureIdInternal: com.meta.openxr.feature.metaxr
@@ -1522,6 +1528,7 @@ MonoBehaviour:
   m_Name: MetaXRFoveationFeature Android
   m_EditorClassIdentifier: Oculus.VR::Meta.XR.MetaXRFoveationFeature
   m_enabled: 0
+  <failedInitialization>k__BackingField: 0
   nameUi: Meta XR Foveation
   version: 1.0.0
   featureIdInternal: com.meta.openxr.feature.foveation
@@ -2226,6 +2233,7 @@ MonoBehaviour:
   m_Name: MetaXRSubsampledLayout Android
   m_EditorClassIdentifier: Oculus.VR::Meta.XR.MetaXRSubsampledLayout
   m_enabled: 0
+  <failedInitialization>k__BackingField: 0
   nameUi: Meta XR Subsampled Layout
   version: 0.0.1
   featureIdInternal: com.meta.openxr.feature.subsampledLayout
@@ -2297,6 +2305,7 @@ MonoBehaviour:
   m_Name: MetaXREyeTrackedFoveationFeature Android
   m_EditorClassIdentifier: Oculus.VR::Meta.XR.MetaXREyeTrackedFoveationFeature
   m_enabled: 0
+  <failedInitialization>k__BackingField: 0
   nameUi: Meta XR Eye Tracked Foveation
   version: 0.0.1
   featureIdInternal: com.meta.openxr.feature.eyetrackedfoveation
