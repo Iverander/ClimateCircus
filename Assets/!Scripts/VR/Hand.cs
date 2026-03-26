@@ -38,12 +38,12 @@ public class Hand : MonoBehaviour
 
     private void Update()
     {
-       if(toGrab) return;
+       if(!toGrab) return;
        if (Vector3.Distance(toGrab.transform.position, transform.position) < .5f)
            toGrab = null;
     }
 
-    private Grabable toGrab;
+    [SerializeField, ReadOnly]private Grabable toGrab;
     private Grabable grabbed;
     private void OnTriggerEnter(Collider other)
     {
@@ -59,8 +59,6 @@ public class Hand : MonoBehaviour
     {
         if(toGrab == null) return;
         
-        toGrab.transform.parent = transform;
-        toGrab.transform.localPosition = Vector3.zero;
         toGrab = grabbed;
         grabbed.OnPickup();
     }
