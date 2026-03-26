@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -11,6 +12,11 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         Player.inputReader.onMove += GetMoveValue;
+    }
+
+    private void OnDestroy()
+    {
+       Player.inputReader.onMove -= GetMoveValue; 
     }
 
     void FixedUpdate()
