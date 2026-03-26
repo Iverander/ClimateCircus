@@ -895,7 +895,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""32b5c874-063f-4479-99c1-c636d3f16a07"",
-                    ""path"": ""<XRController>{RightHand}/gripForce"",
+                    ""path"": ""<XRController>{RightHand}/{Grip}"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
