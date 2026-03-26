@@ -1,13 +1,20 @@
+using System;
 using UnityEngine;
 
 public class Grabable : MonoBehaviour
 {
+   private Collider col;
+   private void Start()
+   {
+      col = GetComponent<Collider>();
+   }
+
    /// <summary>
    /// Happens when the item is first picked up
    /// </summary>
    public virtual void OnPickup()
    {
-      
+      col.isTrigger = true;
    }
 
    /// <summary>
@@ -15,7 +22,7 @@ public class Grabable : MonoBehaviour
    /// </summary>
    public virtual void OnDrop()
    {
-      
+      col.isTrigger =false;
    }
 
    /// <summary>
