@@ -11,6 +11,7 @@ public class Hand : MonoBehaviour
     }
 
 
+    [SerializeField] private Animator handAnimator; 
     public Handedness handedness;
 
     void Start()
@@ -56,6 +57,11 @@ public class Hand : MonoBehaviour
 
     private void Update()
     {
+        if(handedness == Handedness.Right)
+            handAnimator.SetFloat("Grip", Player.inputReader.gripValue_R);
+        else if(handedness == Handedness.Left)
+            handAnimator.SetFloat("Grip", Player.inputReader.gripValue_L);
+        
        if(!toGrab || grabbed) return;
        if (Vector3.Distance(toGrab.transform.position, transform.position) > .5f)
            toGrab = null;
