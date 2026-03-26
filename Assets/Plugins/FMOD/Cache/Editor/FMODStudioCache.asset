@@ -42,7 +42,7 @@ MonoBehaviour:
   Path: Assets/Fmod/ClimateCircus/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639101271561129044
+  lastModified: 639101272109239690
   FileSizes:
   - Name: Desktop
     Value: 900
@@ -73,7 +73,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -105479149522322436}
   cacheVersion: 131858
-  cacheTime: 639101271561129044
+  cacheTime: 639101272109239690
   SerializableEventsDict:
   - key: event:/Fire
     index: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   Path: Assets/Fmod/ClimateCircus/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639101271561129044
+  lastModified: 639101272109179690
   FileSizes:
   - Name: Desktop
     Value: 598016
