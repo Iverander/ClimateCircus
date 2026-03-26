@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{d73406a7-7ff9-424a-aeff-97c108680a80}">
+		<property name="assetPath">
+			<value>New Folder/The forest isn’t going anywhere.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>5.1360000000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{dfd13418-2249-432a-9392-78eb7b06cfb5}</destination>
+		</relationship>
+	</object>
+</objects>

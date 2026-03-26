@@ -1,43 +1,80 @@
 using UnityEngine;
-using TMPro;
 using System.Collections;
+using FMODUnity;
+using FMOD.Studio;
 
 public class DialogueStarter : MonoBehaviour
 {
     [Header("References")]
-    public TextMeshPro text3D;       // Floating 3D text
-    public GameObject characterObj;  // Character object with SpriteRenderer
+    public GameObject characterObj;
 
-    [Header("Dialogue Settings")]
-    [TextArea]
-    public string[] lines;           // Dialogue lines
-    public float typingSpeed = 0.05f; // Typing speed per letter
-    public float fadeSpeed = 2f;     // Fade in speed
+    [Header("FMOD Events")]
+    public EventReference[] phrases;
+    public EventReference endEvent;
+
+    [Header("Timing")]
+    public float minDelay = 5f;
+    public float maxDelay = 10f;
+    public float startDelay = 10f;
+    public float gameDuration = 120f;
+
+    [Header("Fade Settings")]
+    public float fadeSpeed = 2f;
+
+    private EventInstance currentInstance;
 
     void Start()
     {
+        characterObj.SetActive(true);
+
         StartCoroutine(DialogueSequence());
+        StartCoroutine(GameTimer());
     }
 
     IEnumerator DialogueSequence()
     {
-        // Make objects visible
-        characterObj.SetActive(true);
-        text3D.gameObject.SetActive(true);
+        yield return new WaitForSeconds(startDelay);
 
-        // Fade in character (sprite alpha)
         yield return StartCoroutine(FadeInCharacter());
 
-        // Type all lines
-        foreach (string line in lines)
+        foreach (EventReference phrase in phrases)
         {
-            yield return StartCoroutine(TypeLine(line));
-            yield return new WaitForSeconds(1f);
-        }
+            currentInstance = RuntimeManager.CreateInstance(phrase);
+            currentInstance.start();
 
-        // Hide everything after dialogue
+            // wait until event finishes
+            yield return StartCoroutine(WaitForFMODEvent(currentInstance));
+
+            float delay = Random.Range(minDelay, maxDelay);
+            yield return new WaitForSeconds(delay);
+        }
+    }
+
+    IEnumerator GameTimer()
+    {
+        yield return new WaitForSeconds(gameDuration);
+
+        // stop current playing audio
+        currentInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+
+        // play ending audio
+        RuntimeManager.PlayOneShot(endEvent);
+
+        // wait a bit (optional, adjust if needed)
+        yield return new WaitForSeconds(3f);
+
         characterObj.SetActive(false);
-        text3D.gameObject.SetActive(false);
+    }
+
+    IEnumerator WaitForFMODEvent(EventInstance instance)
+    {
+        PLAYBACK_STATE state;
+        do
+        {
+            instance.getPlaybackState(out state);
+            yield return null;
+        }
+        while (state != PLAYBACK_STATE.STOPPED);
     }
 
     IEnumerator FadeInCharacter()
@@ -54,16 +91,6 @@ public class DialogueStarter : MonoBehaviour
             color.a += Time.deltaTime * fadeSpeed;
             sr.color = color;
             yield return null;
-        }
-    }
-
-    IEnumerator TypeLine(string line)
-    {
-        text3D.text = "";
-        foreach (char c in line)
-        {
-            text3D.text += c;
-            yield return new WaitForSeconds(typingSpeed);
         }
     }
 }

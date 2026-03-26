@@ -120,7 +120,7 @@
                     "name": "",
                     "id": "1635d3fe-58b6-4ba9-a4e2-f4b964f6b5c8",
                     "path": "<XRController>{RightHand}/primary2DAxis",
-                    "interactions": "Sector(directions=-1,sweepBehavior=3)",
+                    "interactions": "",
                     "processors": "",
                     "groups": "XR",
                     "action": "Move",
@@ -659,6 +659,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "Use",
+                    "type": "Button",
+                    "id": "fd298bb9-e330-404f-99e7-f37d5e75af21",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "HandRot",
                     "type": "Value",
                     "id": "52529e5a-5aa7-4420-9567-e057b7222c0b",
@@ -692,7 +701,7 @@
                 {
                     "name": "first",
                     "id": "7c80fd4b-a97f-43d6-9c72-48dd5200681c",
-                    "path": "<XRController>/pointerPosition",
+                    "path": "<XRController>{RightHand}/pointerPosition",
                     "interactions": "",
                     "processors": "",
                     "groups": ";XR",
@@ -703,7 +712,7 @@
                 {
                     "name": "Second",
                     "id": "262790d7-d0e2-499e-8183-a61ee9f6c540",
-                    "path": "<XRController>/pointerPosition",
+                    "path": "<XRController>{RightHand}/devicePosition",
                     "interactions": "",
                     "processors": "",
                     "groups": ";XR",
@@ -714,13 +723,24 @@
                 {
                     "name": "Third",
                     "id": "8fd77178-2136-4135-87db-33ee34157e57",
-                    "path": "<XRController>/pointerPosition",
+                    "path": "<XRController>{RightHand}/devicePosition",
                     "interactions": "",
                     "processors": "",
                     "groups": ";XR",
                     "action": "HandPos",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "df285129-5bc6-485a-9ffb-e59eb99dfd42",
+                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";XR",
+                    "action": "Use",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 },
                 {
                     "name": "Quaternion Fallback",
@@ -818,6 +838,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Use",
+                    "type": "Button",
+                    "id": "bb500401-06b2-4dd4-8946-19d89000f258",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -928,6 +957,17 @@
                     "processors": "",
                     "groups": ";XR",
                     "action": "Tracking",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "167cb002-438e-4b53-af19-2f4c30d29785",
+                    "path": "<XRController>{LeftHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";XR",
+                    "action": "Use",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
