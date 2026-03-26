@@ -1,43 +1,30 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
 
 public class VRPortalTrigger : MonoBehaviour
 {
-    [SerializeField] private string sceneName;
-    
+    [SerializeField] private string sceneName = "RingmasterScene";
     private bool isLoading = false;
 
+    // Este comando deteta qualquer coisa que encoste no Plane
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && !isLoading)
+        // 1. Mensagem básica de contacto
+        Debug.Log("CONTACT DETECTED! Object: " + other.name + " | Tag: " + other.tag);
+
+        // 2. Verifica se a TAG coincide
+        if (other.CompareTag("Player"))
         {
-            StartCoroutine(LoadSceneAsync());
-        }
-    }
-
-    IEnumerator LoadSceneAsync()
-    {
-        isLoading = true;
-
-        // Optional: Trigger a Fade Out here if you have a Fade system
-        // FadeScreen.Instance.FadeOut(); 
-
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
-        
-        // This prevents the scene from switching until it's 100% ready
-        operation.allowSceneActivation = false;
-
-        while (!operation.isDone)
-        {
-            // When loading reaches 90%, it's actually ready to switch
-            if (operation.progress >= 0.9f)
+            if (!isLoading)
             {
-                operation.allowSceneActivation = true;
+                isLoading = true;
+                Debug.Log("SUCCESS! Loading scene: " + sceneName);
+                SceneManager.LoadScene(sceneName);
             }
-
-            yield return null;
+        }
+        else
+        {
+            Debug.LogWarning("Object touched, but Tag is NOT 'Player'. It is: " + other.tag);
         }
     }
 }
-
