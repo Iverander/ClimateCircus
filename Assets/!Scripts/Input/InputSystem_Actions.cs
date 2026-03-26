@@ -770,6 +770,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""GrabValue"",
+                    ""type"": ""Value"",
+                    ""id"": ""093bf92f-6433-4055-bb2b-f5ae22f10dd3"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -880,6 +889,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": "";XR"",
                     ""action"": ""Grab"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""32b5c874-063f-4479-99c1-c636d3f16a07"",
+                    ""path"": ""<XRController>{RightHand}/graspValue"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""GrabValue"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1111,6 +1131,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_RightHand_Use = m_RightHand.FindAction("Use", throwIfNotFound: true);
         m_RightHand_HandRot = m_RightHand.FindAction("HandRot", throwIfNotFound: true);
         m_RightHand_Grab = m_RightHand.FindAction("Grab", throwIfNotFound: true);
+        m_RightHand_GrabValue = m_RightHand.FindAction("GrabValue", throwIfNotFound: true);
         // LeftHand
         m_LeftHand = asset.FindActionMap("LeftHand", throwIfNotFound: true);
         m_LeftHand_HandRot = m_LeftHand.FindAction("HandRot", throwIfNotFound: true);
@@ -1496,6 +1517,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_RightHand_Use;
     private readonly InputAction m_RightHand_HandRot;
     private readonly InputAction m_RightHand_Grab;
+    private readonly InputAction m_RightHand_GrabValue;
     /// <summary>
     /// Provides access to input actions defined in input action map "RightHand".
     /// </summary>
@@ -1523,6 +1545,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "RightHand/Grab".
         /// </summary>
         public InputAction @Grab => m_Wrapper.m_RightHand_Grab;
+        /// <summary>
+        /// Provides access to the underlying input action "RightHand/GrabValue".
+        /// </summary>
+        public InputAction @GrabValue => m_Wrapper.m_RightHand_GrabValue;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1561,6 +1587,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Grab.started += instance.OnGrab;
             @Grab.performed += instance.OnGrab;
             @Grab.canceled += instance.OnGrab;
+            @GrabValue.started += instance.OnGrabValue;
+            @GrabValue.performed += instance.OnGrabValue;
+            @GrabValue.canceled += instance.OnGrabValue;
         }
 
         /// <summary>
@@ -1584,6 +1613,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Grab.started -= instance.OnGrab;
             @Grab.performed -= instance.OnGrab;
             @Grab.canceled -= instance.OnGrab;
+            @GrabValue.started -= instance.OnGrabValue;
+            @GrabValue.performed -= instance.OnGrabValue;
+            @GrabValue.canceled -= instance.OnGrabValue;
         }
 
         /// <summary>
@@ -1911,6 +1943,13 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnGrab(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "GrabValue" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnGrabValue(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "LeftHand" which allows adding and removing callbacks.

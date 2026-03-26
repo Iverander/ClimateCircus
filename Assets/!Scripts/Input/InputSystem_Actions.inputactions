@@ -684,6 +684,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "GrabValue",
+                    "type": "Value",
+                    "id": "093bf92f-6433-4055-bb2b-f5ae22f10dd3",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -794,6 +803,17 @@
                     "processors": "",
                     "groups": ";XR",
                     "action": "Grab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "32b5c874-063f-4479-99c1-c636d3f16a07",
+                    "path": "<XRController>{RightHand}/graspValue",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GrabValue",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

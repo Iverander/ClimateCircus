@@ -37,6 +37,7 @@ public class InputReader : InputSystem_Actions.IPlayerActions, InputSystem_Actio
         onHandPos_R?.Invoke(context.ReadValue<Vector3>());
     }
 
+ 
     public Action onUse_R;
     public Action onEndUse_R;
     void InputSystem_Actions.IRightHandActions.OnUse(InputAction.CallbackContext context)
@@ -61,6 +62,12 @@ public class InputReader : InputSystem_Actions.IPlayerActions, InputSystem_Actio
             Grab_R?.Invoke();
         else if (context.canceled)
             UnGrab_R?.Invoke();
+    }
+
+    public float gripValue_R;
+    public void OnGrabValue(InputAction.CallbackContext context)
+    {
+        gripValue_R = context.ReadValue<float>();
     }
 
     #endregion

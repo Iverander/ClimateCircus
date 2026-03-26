@@ -43,7 +43,6 @@ public class Hand : MonoBehaviour
 
     private void EndUse()
     {
-        handAnimator.SetFloat("Trigger", 0);
         if (!grabbed) return;
         
         grabbed.OnEndAction();
@@ -51,7 +50,6 @@ public class Hand : MonoBehaviour
 
     private void Use()
     {
-        handAnimator.SetFloat("Trigger", 1);
        if(!grabbed) return;
        
        grabbed.OnAction();
@@ -59,6 +57,9 @@ public class Hand : MonoBehaviour
 
     private void Update()
     {
+        if(handedness == Handedness.Right)
+            handAnimator.SetFloat("Grip", Player.inputReader.gripValue_R);
+        
        if(!toGrab || grabbed) return;
        if (Vector3.Distance(toGrab.transform.position, transform.position) > .5f)
            toGrab = null;
@@ -79,8 +80,6 @@ public class Hand : MonoBehaviour
     [Button]
     void Grab()
     {
-        handAnimator.SetFloat("Grip", 1);
-        
         if(!toGrab) return;
         
         grabbed = toGrab;
@@ -91,7 +90,6 @@ public class Hand : MonoBehaviour
     [Button]
     private void UnGrab()
     {
-        handAnimator.SetFloat("Grip", 0);
         if(!grabbed) return;
         
         grabbed.OnDrop();
