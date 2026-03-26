@@ -1355,7 +1355,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 806831010088690255, guid: ca982f708bcfc1b49aeeef0443b2e575, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1779604250}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 34234582965123317, guid: ca982f708bcfc1b49aeeef0443b2e575, type: 3}
       insertIndex: -1
@@ -1370,7 +1373,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1407451301}
+    m_TransformParent: {fileID: 1506028455}
     m_Modifications:
     - target: {fileID: 1262602599251393296, guid: df0644c5dc4a9fb49a7762c5877164e3, type: 3}
       propertyPath: m_Name
@@ -1381,16 +1384,28 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2402862203074784206, guid: df0644c5dc4a9fb49a7762c5877164e3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.713165
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402862203074784206, guid: df0644c5dc4a9fb49a7762c5877164e3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.71316487
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402862203074784206, guid: df0644c5dc4a9fb49a7762c5877164e3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.713165
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402862203074784206, guid: df0644c5dc4a9fb49a7762c5877164e3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.864
+      value: -0.15242364
       objectReference: {fileID: 0}
     - target: {fileID: 2402862203074784206, guid: df0644c5dc4a9fb49a7762c5877164e3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.344
+      value: 0.0042789774
       objectReference: {fileID: 0}
     - target: {fileID: 2402862203074784206, guid: df0644c5dc4a9fb49a7762c5877164e3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.6
+      value: 0.016405005
       objectReference: {fileID: 0}
     - target: {fileID: 2402862203074784206, guid: df0644c5dc4a9fb49a7762c5877164e3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1421,16 +1436,44 @@ PrefabInstance:
       value: -270.241
       objectReference: {fileID: 0}
     - target: {fileID: 7356530540589549541, guid: df0644c5dc4a9fb49a7762c5877164e3, type: 3}
+      propertyPath: ShapeModule.angle
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356530540589549541, guid: df0644c5dc4a9fb49a7762c5877164e3, type: 3}
+      propertyPath: CollisionModule.quality
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356530540589549541, guid: df0644c5dc4a9fb49a7762c5877164e3, type: 3}
       propertyPath: ShapeModule.radius.value
       value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356530540589549541, guid: df0644c5dc4a9fb49a7762c5877164e3, type: 3}
+      propertyPath: CollisionModule.radiusScale
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356530540589549541, guid: df0644c5dc4a9fb49a7762c5877164e3, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7356530540589549541, guid: df0644c5dc4a9fb49a7762c5877164e3, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7356530540589549541, guid: df0644c5dc4a9fb49a7762c5877164e3, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356530540589549541, guid: df0644c5dc4a9fb49a7762c5877164e3, type: 3}
       propertyPath: InitialModule.startSpeed.minScalar
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356530540589549541, guid: df0644c5dc4a9fb49a7762c5877164e3, type: 3}
+      propertyPath: CollisionModule.collidesWith.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7356530540589549541, guid: df0644c5dc4a9fb49a7762c5877164e3, type: 3}
+      propertyPath: CollisionModule.collidesWithDynamic
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3017,7 +3060,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1506028455}
-  - {fileID: 1779604250}
   m_Father: {fileID: 847975389}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1437016011 stripped
