@@ -833,6 +833,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "GrabValue",
+                    "type": "Value",
+                    "id": "17d07a32-b518-435d-832b-2b0f0f45b0e5",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "HandPos",
                     "type": "Value",
                     "id": "4f2f790d-f981-43a4-aca4-933d0304a628",
@@ -913,6 +922,17 @@
                     "action": "HandRot",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "cb409689-b9a5-4036-8ab0-38274f950bb8",
+                    "path": "<XRController>{LeftHand}/{Grip}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";XR",
+                    "action": "GrabValue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 },
                 {
                     "name": "",

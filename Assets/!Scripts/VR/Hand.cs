@@ -59,6 +59,8 @@ public class Hand : MonoBehaviour
     {
         if(handedness == Handedness.Right)
             handAnimator.SetFloat("Grip", Player.inputReader.gripValue_R);
+        else if(handedness == Handedness.Left)
+            handAnimator.SetFloat("Grip", Player.inputReader.gripValue_L);
         
        if(!toGrab || grabbed) return;
        if (Vector3.Distance(toGrab.transform.position, transform.position) > .5f)

@@ -64,8 +64,8 @@ public class InputReader : InputSystem_Actions.IPlayerActions, InputSystem_Actio
             UnGrab_R?.Invoke();
     }
 
-    public float gripValue_R;
-    public void OnGrabValue(InputAction.CallbackContext context)
+    public float gripValue_R; 
+    void InputSystem_Actions.IRightHandActions.OnGrabValue(InputAction.CallbackContext context)
     {
         gripValue_R = context.ReadValue<float>();
     }
@@ -108,6 +108,12 @@ public class InputReader : InputSystem_Actions.IPlayerActions, InputSystem_Actio
             onUse_L?.Invoke();
         else if (context.canceled)
             onEndUse_L?.Invoke();
+    }
+    
+    public float gripValue_L; 
+    void InputSystem_Actions.ILeftHandActions.OnGrabValue(InputAction.CallbackContext context)
+    {
+        gripValue_L = context.ReadValue<float>();
     }
 
     #endregion
