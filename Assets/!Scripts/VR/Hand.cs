@@ -62,10 +62,14 @@ public class Hand : MonoBehaviour
         toGrab.transform.parent = transform;
         toGrab.transform.localPosition = Vector3.zero;
         toGrab = grabbed;
+        grabbed.OnPickup();
     }
     [Button]
     private void UnGrab()
     {
+        if(grabbed == null) return;
+        
+        grabbed.OnDrop();
         grabbed.transform.parent = null;
         grabbed = null;
     }
