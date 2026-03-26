@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="AudioFile" id="{046656c9-0dc1-4e03-b89d-dacb72dddc55}">
 		<property name="assetPath">
-			<value>Intro-Who cares.mp3</value>
+			<value>New Folder/Intro-Who cares.mp3</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
