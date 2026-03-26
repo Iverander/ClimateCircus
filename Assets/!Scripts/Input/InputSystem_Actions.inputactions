@@ -809,7 +809,7 @@
                 {
                     "name": "",
                     "id": "32b5c874-063f-4479-99c1-c636d3f16a07",
-                    "path": "<XRController>{RightHand}/graspValue",
+                    "path": "<XRController>{RightHand}/gripForce",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
