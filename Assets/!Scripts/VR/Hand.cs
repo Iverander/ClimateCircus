@@ -23,6 +23,8 @@ public class Hand : MonoBehaviour
                     Player.inputReader.onHandRot_R += UpdateRotation;
                     Player.inputReader.Grab_R += Grab;
                     Player.inputReader.UnGrab_R += UnGrab;
+                    Player.inputReader.onUse_R += Use;
+                    Player.inputReader.onEndUse_R += EndUse;
                     break;
                 }
             case Handedness.Left:
@@ -31,9 +33,25 @@ public class Hand : MonoBehaviour
                     Player.inputReader.onHandRot_L += UpdateRotation;
                     Player.inputReader.Grab_L += Grab;
                     Player.inputReader.UnGrab_L += UnGrab;
+                    Player.inputReader.onUse_L += Use;
+                    Player.inputReader.onEndUse_L += EndUse;
                     break;
                 }
         }
+    }
+
+    private void EndUse()
+    {
+        if (!grabbed) return;
+        
+        grabbed.OnEndAction();
+    }
+
+    private void Use()
+    {
+       if(!grabbed) return;
+       
+       grabbed.OnAction();
     }
 
     private void Update()
