@@ -206,7 +206,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""1635d3fe-58b6-4ba9-a4e2-f4b964f6b5c8"",
                     ""path"": ""<XRController>{RightHand}/primary2DAxis"",
-                    ""interactions"": ""Sector(directions=-1,sweepBehavior=3)"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""XR"",
                     ""action"": ""Move"",
@@ -787,7 +787,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""first"",
                     ""id"": ""7c80fd4b-a97f-43d6-9c72-48dd5200681c"",
-                    ""path"": ""<XRController>/pointerPosition"",
+                    ""path"": ""<XRController>{RightHand}/pointerPosition"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";XR"",
@@ -798,7 +798,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Second"",
                     ""id"": ""262790d7-d0e2-499e-8183-a61ee9f6c540"",
-                    ""path"": ""<XRController>/pointerPosition"",
+                    ""path"": ""<XRController>{RightHand}/devicePosition"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";XR"",
@@ -809,7 +809,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Third"",
                     ""id"": ""8fd77178-2136-4135-87db-33ee34157e57"",
-                    ""path"": ""<XRController>/pointerPosition"",
+                    ""path"": ""<XRController>{RightHand}/devicePosition"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";XR"",
