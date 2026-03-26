@@ -36,34 +36,40 @@ public class Hand : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+       if(toGrab) return;
+       if (Vector3.Distance(toGrab.transform.position, transform.position) < .5f)
+           toGrab = null;
+    }
+
     private PickupAble toGrab;
     private PickupAble grabbed;
     private void OnTriggerEnter(Collider other)
     {
-         toGrab = other;
+        if (other.TryGetComponent(out PickupAble pickupAble))
+        {
+            toGrab = pickupAble;
+        }
     }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if(toGrab == other)
-            toGrab = null;
-    }
+    
 
     [Button]
     void Grab()
     {
+        if(toGrab == null) return;
+        
         toGrab.transform.parent = transform;
         toGrab.transform.localPosition = Vector3.zero;
         toGrab = grabbed;
     }
-    
-    
     [Button]
     private void UnGrab()
     {
         grabbed.transform.parent = null;
         grabbed = null;
     }
+    
     void UpdatePosition(Vector3 pos)
     {
         transform.localPosition = pos;
