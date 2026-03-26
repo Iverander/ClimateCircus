@@ -37,6 +37,16 @@ public class InputReader : InputSystem_Actions.IPlayerActions, InputSystem_Actio
         onHandPos_R?.Invoke(context.ReadValue<Vector3>());
     }
 
+    public Action onUse_R;
+    public Action onEndUse_R;
+    void InputSystem_Actions.IRightHandActions.OnUse(InputAction.CallbackContext context)
+    {
+        if(context.started) 
+            onUse_R?.Invoke();
+        else if (context.canceled)
+            onEndUse_R?.Invoke();
+    }
+
     public Action<Quaternion> onHandRot_R;
     void InputSystem_Actions.IRightHandActions.OnHandRot(InputAction.CallbackContext context)
     {
@@ -82,5 +92,16 @@ public class InputReader : InputSystem_Actions.IPlayerActions, InputSystem_Actio
     {
        Debug.Log(context.ReadValue<int>()); 
     }
+
+    public Action onUse_L;
+    public Action onEndUse_L;
+    void InputSystem_Actions.ILeftHandActions.OnUse(InputAction.CallbackContext context)
+    {
+        if(context.started)
+            onUse_L?.Invoke();
+        else if (context.canceled)
+            onEndUse_L?.Invoke();
+    }
+
     #endregion
 }

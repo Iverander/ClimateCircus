@@ -745,6 +745,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
+                    ""name"": ""Use"",
+                    ""type"": ""Button"",
+                    ""id"": ""fd298bb9-e330-404f-99e7-f37d5e75af21"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""HandRot"",
                     ""type"": ""Value"",
                     ""id"": ""52529e5a-5aa7-4420-9567-e057b7222c0b"",
@@ -807,6 +816,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""action"": ""HandPos"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""df285129-5bc6-485a-9ffb-e59eb99dfd42"",
+                    ""path"": ""<XRController>{RightHand}/triggerPressed"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";XR"",
+                    ""action"": ""Use"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": ""Quaternion Fallback"",
@@ -904,6 +924,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Use"",
+                    ""type"": ""Button"",
+                    ""id"": ""bb500401-06b2-4dd4-8946-19d89000f258"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -1016,6 +1045,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""action"": ""Tracking"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""167cb002-438e-4b53-af19-2f4c30d29785"",
+                    ""path"": ""<XRController>{LeftHand}/triggerPressed"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";XR"",
+                    ""action"": ""Use"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -1068,6 +1108,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         // RightHand
         m_RightHand = asset.FindActionMap("RightHand", throwIfNotFound: true);
         m_RightHand_HandPos = m_RightHand.FindAction("HandPos", throwIfNotFound: true);
+        m_RightHand_Use = m_RightHand.FindAction("Use", throwIfNotFound: true);
         m_RightHand_HandRot = m_RightHand.FindAction("HandRot", throwIfNotFound: true);
         m_RightHand_Grab = m_RightHand.FindAction("Grab", throwIfNotFound: true);
         // LeftHand
@@ -1076,6 +1117,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_LeftHand_HandPos = m_LeftHand.FindAction("HandPos", throwIfNotFound: true);
         m_LeftHand_Grab = m_LeftHand.FindAction("Grab", throwIfNotFound: true);
         m_LeftHand_Tracking = m_LeftHand.FindAction("Tracking", throwIfNotFound: true);
+        m_LeftHand_Use = m_LeftHand.FindAction("Use", throwIfNotFound: true);
     }
 
     ~@InputSystem_Actions()
@@ -1451,6 +1493,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_RightHand;
     private List<IRightHandActions> m_RightHandActionsCallbackInterfaces = new List<IRightHandActions>();
     private readonly InputAction m_RightHand_HandPos;
+    private readonly InputAction m_RightHand_Use;
     private readonly InputAction m_RightHand_HandRot;
     private readonly InputAction m_RightHand_Grab;
     /// <summary>
@@ -1468,6 +1511,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "RightHand/HandPos".
         /// </summary>
         public InputAction @HandPos => m_Wrapper.m_RightHand_HandPos;
+        /// <summary>
+        /// Provides access to the underlying input action "RightHand/Use".
+        /// </summary>
+        public InputAction @Use => m_Wrapper.m_RightHand_Use;
         /// <summary>
         /// Provides access to the underlying input action "RightHand/HandRot".
         /// </summary>
@@ -1505,6 +1552,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @HandPos.started += instance.OnHandPos;
             @HandPos.performed += instance.OnHandPos;
             @HandPos.canceled += instance.OnHandPos;
+            @Use.started += instance.OnUse;
+            @Use.performed += instance.OnUse;
+            @Use.canceled += instance.OnUse;
             @HandRot.started += instance.OnHandRot;
             @HandRot.performed += instance.OnHandRot;
             @HandRot.canceled += instance.OnHandRot;
@@ -1525,6 +1575,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @HandPos.started -= instance.OnHandPos;
             @HandPos.performed -= instance.OnHandPos;
             @HandPos.canceled -= instance.OnHandPos;
+            @Use.started -= instance.OnUse;
+            @Use.performed -= instance.OnUse;
+            @Use.canceled -= instance.OnUse;
             @HandRot.started -= instance.OnHandRot;
             @HandRot.performed -= instance.OnHandRot;
             @HandRot.canceled -= instance.OnHandRot;
@@ -1572,6 +1625,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_LeftHand_HandPos;
     private readonly InputAction m_LeftHand_Grab;
     private readonly InputAction m_LeftHand_Tracking;
+    private readonly InputAction m_LeftHand_Use;
     /// <summary>
     /// Provides access to input actions defined in input action map "LeftHand".
     /// </summary>
@@ -1599,6 +1653,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "LeftHand/Tracking".
         /// </summary>
         public InputAction @Tracking => m_Wrapper.m_LeftHand_Tracking;
+        /// <summary>
+        /// Provides access to the underlying input action "LeftHand/Use".
+        /// </summary>
+        public InputAction @Use => m_Wrapper.m_LeftHand_Use;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1637,6 +1695,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Tracking.started += instance.OnTracking;
             @Tracking.performed += instance.OnTracking;
             @Tracking.canceled += instance.OnTracking;
+            @Use.started += instance.OnUse;
+            @Use.performed += instance.OnUse;
+            @Use.canceled += instance.OnUse;
         }
 
         /// <summary>
@@ -1660,6 +1721,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Tracking.started -= instance.OnTracking;
             @Tracking.performed -= instance.OnTracking;
             @Tracking.canceled -= instance.OnTracking;
+            @Use.started -= instance.OnUse;
+            @Use.performed -= instance.OnUse;
+            @Use.canceled -= instance.OnUse;
         }
 
         /// <summary>
@@ -1827,6 +1891,13 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnHandPos(InputAction.CallbackContext context);
         /// <summary>
+        /// Method invoked when associated input action "Use" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnUse(InputAction.CallbackContext context);
+        /// <summary>
         /// Method invoked when associated input action "HandRot" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
@@ -1876,5 +1947,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnTracking(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Use" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnUse(InputAction.CallbackContext context);
     }
 }
