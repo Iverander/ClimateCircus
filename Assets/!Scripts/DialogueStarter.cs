@@ -5,27 +5,32 @@ using System.Collections;
 public class DialogueStarter : MonoBehaviour
 {
     [Header("References")]
-    public TextMeshPro text3D;       // Floating 3D text
-    public GameObject characterObj;  // Character object with SpriteRenderer
+    public TextMeshPro text3D;
+    public GameObject characterObj;
 
     [Header("Dialogue Settings")]
     [TextArea]
-    public string[] lines;           // Dialogue lines
-    public float typingSpeed = 0.05f; // Typing speed per letter
-    public float fadeSpeed = 2f;     // Fade in speed
+    public string[] lines;
+    public float typingSpeed = 0.05f;
+    public float fadeSpeed = 2f;
+
+    public float startDelay = 10f; // ⏱️ NEW: delay before dialogue
 
     void Start()
     {
+        // 🖼️ Show immediately
+        characterObj.SetActive(true);
+        text3D.gameObject.SetActive(true);
+
         StartCoroutine(DialogueSequence());
     }
 
     IEnumerator DialogueSequence()
     {
-        // Make objects visible
-        characterObj.SetActive(true);
-        text3D.gameObject.SetActive(true);
+        // ⏱️ Wait before starting dialogue
+        yield return new WaitForSeconds(startDelay);
 
-        // Fade in character (sprite alpha)
+        // Fade in character
         yield return StartCoroutine(FadeInCharacter());
 
         // Type all lines
@@ -35,9 +40,9 @@ public class DialogueStarter : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
 
-        // Hide everything after dialogue
-        characterObj.SetActive(false);
-        text3D.gameObject.SetActive(false);
+        // 🚫 REMOVED: no hiding anymore
+        // characterObj.SetActive(false);
+        // text3D.gameObject.SetActive(false);
     }
 
     IEnumerator FadeInCharacter()
