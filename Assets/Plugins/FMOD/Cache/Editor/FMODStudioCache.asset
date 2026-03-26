@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Assets/Fmod/ClimateCircus/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639100459855362340
+  lastModified: 639101201442482472
   FileSizes:
   - Name: Desktop
     Value: 778
@@ -43,7 +43,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -105479149522322436}
   cacheVersion: 131858
-  cacheTime: 639100459855362340
+  cacheTime: 639101201442482472
   SerializableEventsDict:
   - key: event:/Slap sound effect
     index: 0
@@ -62,7 +62,7 @@ MonoBehaviour:
   Path: Assets/Fmod/ClimateCircus/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639100459855036323
+  lastModified: 639101201442341422
   FileSizes:
   - Name: Desktop
     Value: 13216

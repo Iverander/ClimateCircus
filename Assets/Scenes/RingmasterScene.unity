@@ -644,8 +644,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
-<<<<<<< HEAD
-=======
 --- !u!1001 &360168348
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -703,7 +701,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e179b2679f30226c9b505a8976caeddc, type: 3}
->>>>>>> master
 --- !u!4 &364309383 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6344270957299891188, guid: fe31936cab7e0794097a481152b2dde8, type: 3}
