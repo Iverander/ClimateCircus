@@ -43,11 +43,11 @@ public class Hand : MonoBehaviour
            toGrab = null;
     }
 
-    private PickupAble toGrab;
-    private PickupAble grabbed;
+    private Grabable toGrab;
+    private Grabable grabbed;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out PickupAble pickupAble))
+        if (other.TryGetComponent(out Grabable pickupAble))
         {
             toGrab = pickupAble;
         }
