@@ -1,16 +1,26 @@
 using UnityEngine;
 
-public class waterJet : MonoBehaviour
+public class waterJet : Grabable
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+ [SerializeField] public  GameObject objectToToggle;
+    
+     public override void OnAction()
     {
-        
+        Debug.Log("Action triggered!");
+        if (objectToToggle != null)
+        {
+            objectToToggle.SetActive(true);
+        }
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void OnEndAction()
     {
-        
+        Debug.Log("Action released!");
+        if (objectToToggle != null)
+        {
+            objectToToggle.SetActive(false);
+        }
     }
 }
