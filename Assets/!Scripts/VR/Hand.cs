@@ -38,8 +38,8 @@ public class Hand : MonoBehaviour
 
     private void Update()
     {
-       if(!toGrab) return;
-       if (Vector3.Distance(toGrab.transform.position, transform.position) < .5f)
+       if(!toGrab || grabbed) return;
+       if (Vector3.Distance(toGrab.transform.position, transform.position) > .5f)
            toGrab = null;
     }
 
@@ -47,6 +47,7 @@ public class Hand : MonoBehaviour
     private Grabable grabbed;
     private void OnTriggerEnter(Collider other)
     {
+        if(grabbed) return;
         if (other.TryGetComponent(out Grabable pickupAble))
         {
             toGrab = pickupAble;
@@ -57,15 +58,17 @@ public class Hand : MonoBehaviour
     [Button]
     void Grab()
     {
-        if(toGrab == null) return;
+        if(!toGrab) return;
         
-        toGrab = grabbed;
+        grabbed = toGrab;
+        toGrab = null;
+        grabbed.transform.parent = transform;
         grabbed.OnPickup();
     }
     [Button]
     private void UnGrab()
     {
-        if(grabbed == null) return;
+        if(!grabbed) return;
         
         grabbed.OnDrop();
         grabbed.transform.parent = null;
