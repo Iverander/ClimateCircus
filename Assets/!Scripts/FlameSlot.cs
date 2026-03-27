@@ -5,12 +5,15 @@ public class FlameSlot : MonoBehaviour
      public GameObject flamePrefab;
 
     private GameObject currentFlame;
+    public GameEnding gameEnding;
 
     public void ActivateFlame()
     {
         if (currentFlame == null)
         {
             currentFlame = Instantiate(flamePrefab, transform.position, Quaternion.identity, transform);
+            gameEnding.IncreaseFlameCount(); 
+
         }
     }
 
@@ -20,6 +23,8 @@ public class FlameSlot : MonoBehaviour
         {
             Destroy(currentFlame);
             currentFlame = null;
+            gameEnding.DecreaseFlameCount(); 
+            gameEnding.CheckFlameCount(); 
         }
     }
 
@@ -27,5 +32,6 @@ public class FlameSlot : MonoBehaviour
     {
         // something hit the slot → remove flame
         DeactivateFlame();
+        
     }
 }
