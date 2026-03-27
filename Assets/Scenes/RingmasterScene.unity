@@ -211,6 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
+  gameEnding: {fileID: 1652228713}
 --- !u!54 &5250094
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -388,6 +389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
+  gameEnding: {fileID: 1652228713}
 --- !u!54 &32502725
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -752,6 +754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
+  gameEnding: {fileID: 1652228713}
 --- !u!54 &218563847
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1031,7 +1034,7 @@ Transform:
   m_GameObject: {fileID: 254931856}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 177.75, y: 1.13, z: 96.18}
+  m_LocalPosition: {x: 176.27, y: 1.13, z: 96.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1160,6 +1163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
+  gameEnding: {fileID: 1652228713}
 --- !u!54 &331165762
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1769,6 +1773,7 @@ GameObject:
   - component: {fileID: 639878470}
   - component: {fileID: 639878469}
   - component: {fileID: 639878474}
+  - component: {fileID: 639878475}
   m_Layer: 0
   m_Name: bigRod
   m_TagString: Untagged
@@ -1893,6 +1898,20 @@ MonoBehaviour:
   - {fileID: 1361238283}
   minDelay: 6
   maxDelay: 20
+--- !u!114 &639878475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639878468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c9bd3b208a85d647979aac0ae229584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MovingRod
+  amplitude: 0.2
+  speed: 2
 --- !u!4 &668011144 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1987163287510293988, guid: 73e5eb6344dfa384bb6b6e50d6231ee6, type: 3}
@@ -2090,6 +2109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
+  gameEnding: {fileID: 1652228713}
 --- !u!54 &758804740
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2773,6 +2793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
+  gameEnding: {fileID: 1652228713}
 --- !u!54 &997993479
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3074,6 +3095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
+  gameEnding: {fileID: 1652228713}
 --- !u!54 &1025204817
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3440,6 +3462,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
+  gameEnding: {fileID: 1652228713}
 --- !u!54 &1116121671
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3512,6 +3535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
+  gameEnding: {fileID: 1652228713}
 --- !u!54 &1199616646
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3601,6 +3625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
+  gameEnding: {fileID: 1652228713}
 --- !u!54 &1201197804
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4118,6 +4143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
+  gameEnding: {fileID: 1652228713}
 --- !u!54 &1269538306
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4576,6 +4602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
+  gameEnding: {fileID: 1652228713}
 --- !u!54 &1361238284
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4680,6 +4707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
+  gameEnding: {fileID: 1652228713}
 --- !u!54 &1437016014
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4863,6 +4891,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
+  gameEnding: {fileID: 1652228713}
 --- !u!54 &1511406626
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5298,7 +5327,10 @@ MonoBehaviour:
       Data3: -1508401740
       Data4: 1560582342
     Path: event:/You think you have a chocice that's cute
-  ringmaster: {fileID: 0}
+  flameManager1: {fileID: 639878474}
+  flameManager2: {fileID: 1231876297}
+  flameManager3: {fileID: 1339061255}
+  ringmaster: {fileID: 2063046248}
 --- !u!4 &1663752134 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6344270957299891188, guid: fe31936cab7e0794097a481152b2dde8, type: 3}
@@ -5339,6 +5371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
+  gameEnding: {fileID: 1652228713}
 --- !u!54 &1663752137
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5406,6 +5439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
+  gameEnding: {fileID: 1652228713}
 --- !u!54 &1708191507
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6135,6 +6169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
+  gameEnding: {fileID: 1652228713}
 --- !u!54 &1998364347
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6224,6 +6259,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
+  gameEnding: {fileID: 1652228713}
 --- !u!54 &2007805997
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6475,6 +6511,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
+  gameEnding: {fileID: 1652228713}
 --- !u!54 &2101928069
 Rigidbody:
   m_ObjectHideFlags: 0
