@@ -57,13 +57,12 @@ public class Hand : MonoBehaviour
     {
        if(!grabbed) return;
        
+       HapticFeedback(.6f, .1f);
        grabbed.OnAction();
     }
 
     private void Update()
     {
-        HapticFeedback();
-        
         if(handedness == Handedness.Right)
             handAnimator.SetFloat("Grip", Player.inputReader.gripValue_R);
         else if(handedness == Handedness.Left)
@@ -81,6 +80,7 @@ public class Hand : MonoBehaviour
         if(grabbed) return;
         if (other.TryGetComponent(out Grabable pickupAble))
         {
+            HapticFeedback(.3f, .1f);
             toGrab = pickupAble;
         }
     }
@@ -90,6 +90,8 @@ public class Hand : MonoBehaviour
     void Grab()
     {
         if(!toGrab) return;
+        
+        HapticFeedback(.6f, .1f);
         
         grabbed = toGrab;
         toGrab = null;
@@ -116,8 +118,8 @@ public class Hand : MonoBehaviour
     }
 
 
-    public void HapticFeedback()
+    public void HapticFeedback(float amp, float dur)
     {
-        hapticPlayer.SendHapticImpulse(10, 10);
+        hapticPlayer.SendHapticImpulse(amp, dur);
     }
 }
