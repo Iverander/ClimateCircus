@@ -1239,6 +1239,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 957769502767685698, guid: e179b2679f30226c9b505a8976caeddc, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1037567924355972628, guid: e179b2679f30226c9b505a8976caeddc, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1246,6 +1250,10 @@ PrefabInstance:
     - target: {fileID: 1037567924355972628, guid: e179b2679f30226c9b505a8976caeddc, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6905654463176801134, guid: e179b2679f30226c9b505a8976caeddc, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5553,7 +5561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97d8d6b54c1ae924e9787cdb88f17bfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::waterJet
-  water: {fileID: 0}
+  water: {fileID: 1779604255}
   objectToToggle: {fileID: 629690102}
 --- !u!64 &1775344129
 MeshCollider:
@@ -5613,6 +5621,11 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!198 &1779604255 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7356530540589549541, guid: df0644c5dc4a9fb49a7762c5877164e3, type: 3}
+  m_PrefabInstance: {fileID: 811626661}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1789777781
 PrefabInstance:
   m_ObjectHideFlags: 0
