@@ -211,7 +211,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
-  gameEnding: {fileID: 1652228713}
 --- !u!54 &5250094
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -389,7 +388,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
-  gameEnding: {fileID: 1652228713}
 --- !u!54 &32502725
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -754,7 +752,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
-  gameEnding: {fileID: 1652228713}
 --- !u!54 &218563847
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -782,6 +779,28 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &218563850
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218563842}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1177742673133092418, guid: c045d1399cf47e94396c3fb9f7040cb8, type: 3}
 --- !u!1 &233786245 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3894c360ab3b9af46b786656ffe0e50e, type: 3}
@@ -1141,7 +1160,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
-  gameEnding: {fileID: 1652228713}
 --- !u!54 &331165762
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1392,6 +1410,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8676952158559593809, guid: 418119bc089da594caa33bd03ea445f2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 218563847}
+    - targetCorrespondingSourceObject: {fileID: 8676952158559593809, guid: 418119bc089da594caa33bd03ea445f2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 218563850}
   m_SourcePrefab: {fileID: 100100000, guid: 418119bc089da594caa33bd03ea445f2, type: 3}
 --- !u!4 &457917117 stripped
 Transform:
@@ -2069,7 +2090,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
-  gameEnding: {fileID: 1652228713}
 --- !u!54 &758804740
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2108,10 +2128,6 @@ PrefabInstance:
     - target: {fileID: 34234582965123317, guid: ca982f708bcfc1b49aeeef0443b2e575, type: 3}
       propertyPath: m_Name
       value: Nozzle
-      objectReference: {fileID: 0}
-    - target: {fileID: 34234582965123317, guid: ca982f708bcfc1b49aeeef0443b2e575, type: 3}
-      propertyPath: m_Layer
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 806831010088690255, guid: ca982f708bcfc1b49aeeef0443b2e575, type: 3}
       propertyPath: m_LocalScale.x
@@ -2190,10 +2206,6 @@ PrefabInstance:
     - target: {fileID: 1262602599251393296, guid: df0644c5dc4a9fb49a7762c5877164e3, type: 3}
       propertyPath: m_Name
       value: waterStream
-      objectReference: {fileID: 0}
-    - target: {fileID: 1262602599251393296, guid: df0644c5dc4a9fb49a7762c5877164e3, type: 3}
-      propertyPath: m_Layer
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1262602599251393296, guid: df0644c5dc4a9fb49a7762c5877164e3, type: 3}
       propertyPath: m_IsActive
@@ -2289,7 +2301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7356530540589549541, guid: df0644c5dc4a9fb49a7762c5877164e3, type: 3}
       propertyPath: CollisionModule.collidesWith.m_Bits
-      value: 47
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7356530540589549541, guid: df0644c5dc4a9fb49a7762c5877164e3, type: 3}
       propertyPath: CollisionModule.collidesWithDynamic
@@ -2761,7 +2773,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
-  gameEnding: {fileID: 1652228713}
 --- !u!54 &997993479
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3063,7 +3074,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
-  gameEnding: {fileID: 1652228713}
 --- !u!54 &1025204817
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3430,7 +3440,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
-  gameEnding: {fileID: 1652228713}
 --- !u!54 &1116121671
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3503,7 +3512,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
-  gameEnding: {fileID: 1652228713}
 --- !u!54 &1199616646
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3593,7 +3601,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
-  gameEnding: {fileID: 1652228713}
 --- !u!54 &1201197804
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4111,7 +4118,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
-  gameEnding: {fileID: 1652228713}
 --- !u!54 &1269538306
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4570,7 +4576,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
-  gameEnding: {fileID: 1652228713}
 --- !u!54 &1361238284
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4675,7 +4680,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
-  gameEnding: {fileID: 1652228713}
 --- !u!54 &1437016014
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4859,7 +4863,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
-  gameEnding: {fileID: 1652228713}
 --- !u!54 &1511406626
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5336,7 +5339,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
-  gameEnding: {fileID: 1652228713}
 --- !u!54 &1663752137
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5404,7 +5406,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
-  gameEnding: {fileID: 1652228713}
 --- !u!54 &1708191507
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5518,7 +5519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97d8d6b54c1ae924e9787cdb88f17bfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::waterJet
-  water: {fileID: 1779604255}
+  water: {fileID: 0}
   objectToToggle: {fileID: 629690102}
 --- !u!64 &1775344129
 MeshCollider:
@@ -5578,11 +5579,6 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
---- !u!198 &1779604255 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 7356530540589549541, guid: df0644c5dc4a9fb49a7762c5877164e3, type: 3}
-  m_PrefabInstance: {fileID: 811626661}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1789777781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6139,7 +6135,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
-  gameEnding: {fileID: 1652228713}
 --- !u!54 &1998364347
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6229,7 +6224,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
-  gameEnding: {fileID: 1652228713}
 --- !u!54 &2007805997
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6481,7 +6475,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlameSlot
   flamePrefab: {fileID: 6701362084184460967, guid: d7bb61ee00218de4984869671aa0841a, type: 3}
-  gameEnding: {fileID: 1652228713}
 --- !u!54 &2101928069
 Rigidbody:
   m_ObjectHideFlags: 0
