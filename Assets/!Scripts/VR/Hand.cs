@@ -1,6 +1,8 @@
 using System;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Inputs.Haptics;
 
 public class Hand : MonoBehaviour
 {
@@ -13,9 +15,12 @@ public class Hand : MonoBehaviour
 
     [SerializeField] private Animator handAnimator; 
     public Handedness handedness;
+    private HapticImpulsePlayer hapticPlayer;
 
     void Start()
     {
+        hapticPlayer = GetComponent<HapticImpulsePlayer>();
+        
         switch(handedness)
         {
             case Handedness.Right:
@@ -52,6 +57,7 @@ public class Hand : MonoBehaviour
     {
        if(!grabbed) return;
        
+       HapticFeedback(.6f, .1f);
        grabbed.OnAction();
     }
 
@@ -74,6 +80,7 @@ public class Hand : MonoBehaviour
         if(grabbed) return;
         if (other.TryGetComponent(out Grabable pickupAble))
         {
+            HapticFeedback(.3f, .1f);
             toGrab = pickupAble;
         }
     }
@@ -83,6 +90,8 @@ public class Hand : MonoBehaviour
     void Grab()
     {
         if(!toGrab) return;
+        
+        HapticFeedback(.6f, .1f);
         
         grabbed = toGrab;
         toGrab = null;
@@ -108,4 +117,9 @@ public class Hand : MonoBehaviour
         transform.localRotation = rot;
     }
 
+
+    public void HapticFeedback(float amp, float dur)
+    {
+        hapticPlayer.SendHapticImpulse(amp, dur);
+    }
 }
