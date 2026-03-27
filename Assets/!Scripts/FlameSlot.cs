@@ -22,10 +22,4 @@ public class FlameSlot : MonoBehaviour
             currentFlame = null;
         }
     }
-
-    void OnTriggerEnter(Collider other)
-    {
-        // something hit the slot → remove flame
-        DeactivateFlame();
-    }
 }
