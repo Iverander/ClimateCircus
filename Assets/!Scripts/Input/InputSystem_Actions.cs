@@ -779,6 +779,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Haptic"",
+                    ""type"": ""Value"",
+                    ""id"": ""602abcce-85dd-4149-a0b2-559c528bb763"",
+                    ""expectedControlType"": ""Haptic"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -902,6 +911,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""action"": ""GrabValue"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f6397a75-4a0d-4b8c-8d09-4c04333a7f7c"",
+                    ""path"": ""<XRController>{RightHand}/haptic"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";XR"",
+                    ""action"": ""Haptic"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -914,6 +934,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""type"": ""Value"",
                     ""id"": ""5f1ba944-5dd6-48b9-94dc-11c5d26ffbbd"",
                     ""expectedControlType"": ""Quaternion"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Haptic"",
+                    ""type"": ""Value"",
+                    ""id"": ""f4dde449-ac9d-4ee8-bcc0-348a62f3949d"",
+                    ""expectedControlType"": ""Haptic"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
@@ -1008,6 +1037,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""action"": ""HandRot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8c157758-14fe-49c9-bba1-782b36c0d81a"",
+                    ""path"": ""<XRController>{LeftHand}/haptic"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";XR"",
+                    ""action"": ""Haptic"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
@@ -1152,9 +1192,11 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_RightHand_HandRot = m_RightHand.FindAction("HandRot", throwIfNotFound: true);
         m_RightHand_Grab = m_RightHand.FindAction("Grab", throwIfNotFound: true);
         m_RightHand_GrabValue = m_RightHand.FindAction("GrabValue", throwIfNotFound: true);
+        m_RightHand_Haptic = m_RightHand.FindAction("Haptic", throwIfNotFound: true);
         // LeftHand
         m_LeftHand = asset.FindActionMap("LeftHand", throwIfNotFound: true);
         m_LeftHand_HandRot = m_LeftHand.FindAction("HandRot", throwIfNotFound: true);
+        m_LeftHand_Haptic = m_LeftHand.FindAction("Haptic", throwIfNotFound: true);
         m_LeftHand_GrabValue = m_LeftHand.FindAction("GrabValue", throwIfNotFound: true);
         m_LeftHand_HandPos = m_LeftHand.FindAction("HandPos", throwIfNotFound: true);
         m_LeftHand_Grab = m_LeftHand.FindAction("Grab", throwIfNotFound: true);
@@ -1539,6 +1581,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_RightHand_HandRot;
     private readonly InputAction m_RightHand_Grab;
     private readonly InputAction m_RightHand_GrabValue;
+    private readonly InputAction m_RightHand_Haptic;
     /// <summary>
     /// Provides access to input actions defined in input action map "RightHand".
     /// </summary>
@@ -1570,6 +1613,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "RightHand/GrabValue".
         /// </summary>
         public InputAction @GrabValue => m_Wrapper.m_RightHand_GrabValue;
+        /// <summary>
+        /// Provides access to the underlying input action "RightHand/Haptic".
+        /// </summary>
+        public InputAction @Haptic => m_Wrapper.m_RightHand_Haptic;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1611,6 +1658,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @GrabValue.started += instance.OnGrabValue;
             @GrabValue.performed += instance.OnGrabValue;
             @GrabValue.canceled += instance.OnGrabValue;
+            @Haptic.started += instance.OnHaptic;
+            @Haptic.performed += instance.OnHaptic;
+            @Haptic.canceled += instance.OnHaptic;
         }
 
         /// <summary>
@@ -1637,6 +1687,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @GrabValue.started -= instance.OnGrabValue;
             @GrabValue.performed -= instance.OnGrabValue;
             @GrabValue.canceled -= instance.OnGrabValue;
+            @Haptic.started -= instance.OnHaptic;
+            @Haptic.performed -= instance.OnHaptic;
+            @Haptic.canceled -= instance.OnHaptic;
         }
 
         /// <summary>
@@ -1675,6 +1728,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_LeftHand;
     private List<ILeftHandActions> m_LeftHandActionsCallbackInterfaces = new List<ILeftHandActions>();
     private readonly InputAction m_LeftHand_HandRot;
+    private readonly InputAction m_LeftHand_Haptic;
     private readonly InputAction m_LeftHand_GrabValue;
     private readonly InputAction m_LeftHand_HandPos;
     private readonly InputAction m_LeftHand_Grab;
@@ -1695,6 +1749,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "LeftHand/HandRot".
         /// </summary>
         public InputAction @HandRot => m_Wrapper.m_LeftHand_HandRot;
+        /// <summary>
+        /// Provides access to the underlying input action "LeftHand/Haptic".
+        /// </summary>
+        public InputAction @Haptic => m_Wrapper.m_LeftHand_Haptic;
         /// <summary>
         /// Provides access to the underlying input action "LeftHand/GrabValue".
         /// </summary>
@@ -1744,6 +1802,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @HandRot.started += instance.OnHandRot;
             @HandRot.performed += instance.OnHandRot;
             @HandRot.canceled += instance.OnHandRot;
+            @Haptic.started += instance.OnHaptic;
+            @Haptic.performed += instance.OnHaptic;
+            @Haptic.canceled += instance.OnHaptic;
             @GrabValue.started += instance.OnGrabValue;
             @GrabValue.performed += instance.OnGrabValue;
             @GrabValue.canceled += instance.OnGrabValue;
@@ -1773,6 +1834,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @HandRot.started -= instance.OnHandRot;
             @HandRot.performed -= instance.OnHandRot;
             @HandRot.canceled -= instance.OnHandRot;
+            @Haptic.started -= instance.OnHaptic;
+            @Haptic.performed -= instance.OnHaptic;
+            @Haptic.canceled -= instance.OnHaptic;
             @GrabValue.started -= instance.OnGrabValue;
             @GrabValue.performed -= instance.OnGrabValue;
             @GrabValue.canceled -= instance.OnGrabValue;
@@ -1982,6 +2046,13 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnGrabValue(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Haptic" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnHaptic(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "LeftHand" which allows adding and removing callbacks.
@@ -1997,6 +2068,13 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnHandRot(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Haptic" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnHaptic(InputAction.CallbackContext context);
         /// <summary>
         /// Method invoked when associated input action "GrabValue" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>

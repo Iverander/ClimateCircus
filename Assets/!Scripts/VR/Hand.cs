@@ -1,6 +1,8 @@
 using System;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Inputs.Haptics;
 
 public class Hand : MonoBehaviour
 {
@@ -13,9 +15,12 @@ public class Hand : MonoBehaviour
 
     [SerializeField] private Animator handAnimator; 
     public Handedness handedness;
+    private HapticImpulsePlayer hapticPlayer;
 
     void Start()
     {
+        hapticPlayer = GetComponent<HapticImpulsePlayer>();
+        
         switch(handedness)
         {
             case Handedness.Right:
@@ -57,6 +62,8 @@ public class Hand : MonoBehaviour
 
     private void Update()
     {
+        HapticFeedback();
+        
         if(handedness == Handedness.Right)
             handAnimator.SetFloat("Grip", Player.inputReader.gripValue_R);
         else if(handedness == Handedness.Left)
@@ -108,4 +115,9 @@ public class Hand : MonoBehaviour
         transform.localRotation = rot;
     }
 
+
+    public void HapticFeedback()
+    {
+        hapticPlayer.SendHapticImpulse(10, 10);
+    }
 }
