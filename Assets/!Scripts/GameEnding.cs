@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections;
 using FMODUnity;
 using FMOD.Studio;
+using System.Diagnostics;
 
 public class GameEnding : MonoBehaviour{
 
@@ -28,11 +29,15 @@ public class GameEnding : MonoBehaviour{
     {
         if (flameCount == 0 )
         {
-            RuntimeManager.PlayOneShot(winningGame);
             flameManager1.deactivateFlames(); 
             flameManager2.deactivateFlames(); 
             flameManager3.deactivateFlames(); 
-            
+
+            var emitter = new GameObject().AddComponent<StudioEventEmitter>();
+            emitter.EventReference = winningGame;
+            emitter.Play();
+
+            RuntimeManager.PlayOneShot(winningGame);
         }
     }
 
