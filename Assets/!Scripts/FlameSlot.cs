@@ -12,7 +12,7 @@ public class FlameSlot : MonoBehaviour
         if (currentFlame == null)
         {
             currentFlame = Instantiate(flamePrefab, transform.position, Quaternion.identity, transform);
-            gameEnding.IncreaseFlameCount;
+            gameEnding.IncreaseFlameCount();
         }
     }
 
