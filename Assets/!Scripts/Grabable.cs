@@ -4,9 +4,11 @@ using UnityEngine;
 public class Grabable : MonoBehaviour
 {
    private Collider col;
+   protected Rigidbody rb; 
    private void Start()
    {
       col = GetComponent<Collider>();
+      rb = GetComponent<Rigidbody>();
    }
 
    /// <summary>
@@ -14,7 +16,17 @@ public class Grabable : MonoBehaviour
    /// </summary>
    public virtual void OnPickup()
    {
-      col.isTrigger = true;
+       if (rb != null)
+        {
+            rb.isKinematic = true;
+        }
+
+        // Keep collider normal (non-trigger) so physics works
+        if (col != null)
+        {
+            col.isTrigger = false;
+        }
+     // col.isTrigger = true;
    }
 
    /// <summary>
@@ -22,7 +34,17 @@ public class Grabable : MonoBehaviour
    /// </summary>
    public virtual void OnDrop()
    {
-      col.isTrigger =false;
+      // Resume physics
+        if (rb != null)
+        {
+            rb.isKinematic = false;
+        }
+
+        if (col != null)
+        {
+            col.isTrigger = false;
+        }
+      //col.isTrigger =false;
    }
 
    /// <summary>
