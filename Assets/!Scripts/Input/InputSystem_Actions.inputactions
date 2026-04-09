@@ -120,7 +120,7 @@
                     "name": "",
                     "id": "1635d3fe-58b6-4ba9-a4e2-f4b964f6b5c8",
                     "path": "<XRController>{RightHand}/primary2DAxis",
-                    "interactions": "Sector(directions=-1,sweepBehavior=3)",
+                    "interactions": "",
                     "processors": "",
                     "groups": "XR",
                     "action": "Move",
@@ -684,6 +684,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "GrabValue",
+                    "type": "Value",
+                    "id": "093bf92f-6433-4055-bb2b-f5ae22f10dd3",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Haptic",
+                    "type": "Value",
+                    "id": "602abcce-85dd-4149-a0b2-559c528bb763",
+                    "expectedControlType": "Haptic",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -701,7 +719,7 @@
                 {
                     "name": "first",
                     "id": "7c80fd4b-a97f-43d6-9c72-48dd5200681c",
-                    "path": "<XRController>/pointerPosition",
+                    "path": "<XRController>{RightHand}/pointerPosition",
                     "interactions": "",
                     "processors": "",
                     "groups": ";XR",
@@ -712,7 +730,7 @@
                 {
                     "name": "Second",
                     "id": "262790d7-d0e2-499e-8183-a61ee9f6c540",
-                    "path": "<XRController>/pointerPosition",
+                    "path": "<XRController>{RightHand}/devicePosition",
                     "interactions": "",
                     "processors": "",
                     "groups": ";XR",
@@ -723,7 +741,7 @@
                 {
                     "name": "Third",
                     "id": "8fd77178-2136-4135-87db-33ee34157e57",
-                    "path": "<XRController>/pointerPosition",
+                    "path": "<XRController>{RightHand}/devicePosition",
                     "interactions": "",
                     "processors": "",
                     "groups": ";XR",
@@ -796,6 +814,28 @@
                     "action": "Grab",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "32b5c874-063f-4479-99c1-c636d3f16a07",
+                    "path": "<XRController>{RightHand}/{Grip}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GrabValue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f6397a75-4a0d-4b8c-8d09-4c04333a7f7c",
+                    "path": "<XRController>{RightHand}/haptic",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";XR",
+                    "action": "Haptic",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -808,6 +848,24 @@
                     "type": "Value",
                     "id": "5f1ba944-5dd6-48b9-94dc-11c5d26ffbbd",
                     "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Haptic",
+                    "type": "Value",
+                    "id": "f4dde449-ac9d-4ee8-bcc0-348a62f3949d",
+                    "expectedControlType": "Haptic",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "GrabValue",
+                    "type": "Value",
+                    "id": "17d07a32-b518-435d-832b-2b0f0f45b0e5",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -893,6 +951,28 @@
                     "action": "HandRot",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "8c157758-14fe-49c9-bba1-782b36c0d81a",
+                    "path": "<XRController>{LeftHand}/haptic",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";XR",
+                    "action": "Haptic",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cb409689-b9a5-4036-8ab0-38274f950bb8",
+                    "path": "<XRController>{LeftHand}/{Grip}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";XR",
+                    "action": "GrabValue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
