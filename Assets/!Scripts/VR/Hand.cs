@@ -70,8 +70,8 @@ public class Hand : MonoBehaviour
 
     private void Update()
     {
-        handPos[0] = transform.position;
         handPos[1] = handPos[0];
+        handPos[0] = transform.position;
         
         if(handedness == Handedness.Right)
             handAnimator.SetFloat("Grip", Player.inputReader.gripValue_R);
