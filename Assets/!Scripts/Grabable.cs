@@ -1,11 +1,12 @@
 using System;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Grabable : MonoBehaviour
 {
     public bool Throwable = false;
-    [ShowIf("Throwable"), SerializeField] float throwForce = 1f;
+    [FormerlySerializedAs("throwForce")] [ShowIf("Throwable"), SerializeField] float mass = 1f;
    private Collider col;
    private void Start()
    {
@@ -33,7 +34,7 @@ public class Grabable : MonoBehaviour
            col.attachedRigidbody.isKinematic = false; // here too
            
            if(!Throwable) return;
-           col.attachedRigidbody.AddForce(hand.CalculateVelocity() * throwForce, ForceMode.Force);
+           col.attachedRigidbody.AddForce(hand.CalculateVelocity() / mass, ForceMode.Force);
        }
    }
 
