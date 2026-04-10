@@ -1,50 +1,40 @@
 using System;
+using NaughtyAttributes;
 using UnityEngine;
 
 public class Grabable : MonoBehaviour
 {
+    public bool Throwable = false;
+    [ShowIf("Throwable"), SerializeField] float throwForce = 1f;
    private Collider col;
-   protected Rigidbody rb; 
    private void Start()
    {
       col = GetComponent<Collider>();
-      rb = GetComponent<Rigidbody>();
    }
 
    /// <summary>
    /// Happens when the item is first picked up
    /// </summary>
-   public virtual void OnPickup()
+   public virtual void OnPickup(Hand hand)
    {
-       if (rb != null)
-        {
-            rb.isKinematic = true;
-        }
-
-        // Keep collider normal (non-trigger) so physics works
-        if (col != null)
-        {
-            col.isTrigger = false;
-        }
-     // col.isTrigger = true;
+       col.isTrigger = true;
+       if(col.attachedRigidbody != null)
+           col.attachedRigidbody.isKinematic = true; //simplified
    }
 
    /// <summary>
    /// Happens when the item is let go off
    /// </summary>
-   public virtual void OnDrop()
+   public virtual void OnDrop(Hand hand)
    {
-      // Resume physics
-        if (rb != null)
-        {
-            rb.isKinematic = false;
-        }
-
-        if (col != null)
-        {
-            col.isTrigger = false;
-        }
-      //col.isTrigger =false;
+       col.isTrigger = false;
+       if (col.attachedRigidbody != null)
+       {
+           col.attachedRigidbody.isKinematic = false; // here too
+           
+           if(!Throwable) return;
+           col.attachedRigidbody.AddForce(hand.CalculateVelocity() * throwForce, ForceMode.Force);
+       }
    }
 
    /// <summary>

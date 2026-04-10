@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -16,6 +17,12 @@ public class Hand : MonoBehaviour
     [SerializeField] private Animator handAnimator; 
     public Handedness handedness;
     private HapticImpulsePlayer hapticPlayer;
+    
+    [ReadOnly] public List<Vector3> handPos = new()
+    {
+        Vector3.zero,
+        Vector3.zero
+    };
 
     void Start()
     {
@@ -63,6 +70,9 @@ public class Hand : MonoBehaviour
 
     private void Update()
     {
+        handPos[0] = transform.position;
+        handPos[1] = handPos[0];
+        
         if(handedness == Handedness.Right)
             handAnimator.SetFloat("Grip", Player.inputReader.gripValue_R);
         else if(handedness == Handedness.Left)
@@ -96,14 +106,14 @@ public class Hand : MonoBehaviour
         grabbed = toGrab;
         toGrab = null;
         grabbed.transform.parent = transform;
-        grabbed.OnPickup();
+        grabbed.OnPickup(this);
     }
     [Button]
     private void UnGrab()
     {
         if(!grabbed) return;
         
-        grabbed.OnDrop();
+        grabbed.OnDrop(this);
         grabbed.transform.parent = null;
         grabbed = null;
     }
@@ -121,5 +131,10 @@ public class Hand : MonoBehaviour
     public void HapticFeedback(float amp, float dur)
     {
         hapticPlayer.SendHapticImpulse(amp, dur);
+    }
+    
+    public Vector3 CalculateVelocity()
+    {
+        return (handPos[0] - handPos[1])/Time.deltaTime;
     }
 }

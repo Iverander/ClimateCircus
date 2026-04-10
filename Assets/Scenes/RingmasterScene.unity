@@ -9252,9 +9252,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1245675854}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27156b0f629e30540b9998a489937bef, type: 3}
+  m_Script: {fileID: 11500000, guid: f4fea850cf63ac5f2b5a82bb8232e311, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SimpleGrabable
+  m_EditorClassIdentifier: Assembly-CSharp::Grabable
+  Throwable: 1
+  throwForce: 1
 --- !u!1001 &1254916359
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24756,6 +24758,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97d8d6b54c1ae924e9787cdb88f17bfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::waterJet
+  Throwable: 0
+  throwForce: 1
   water: {fileID: 1779604255}
   objectToToggle: {fileID: 629690102}
 --- !u!64 &1775344129
