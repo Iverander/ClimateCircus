@@ -32,22 +32,22 @@ public class Hand : MonoBehaviour
         {
             case Handedness.Right:
                 {
-                    Player.inputReader.onHandPos_R += UpdatePosition;
-                    Player.inputReader.onHandRot_R += UpdateRotation;
-                    Player.inputReader.Grab_R += Grab;
-                    Player.inputReader.UnGrab_R += UnGrab;
-                    Player.inputReader.onUse_R += Use;
-                    Player.inputReader.onEndUse_R += EndUse;
+                    Player.InputReader.onHandPos_R += UpdatePosition;
+                    Player.InputReader.onHandRot_R += UpdateRotation;
+                    Player.InputReader.Grab_R += Grab;
+                    Player.InputReader.UnGrab_R += UnGrab;
+                    Player.InputReader.onUse_R += Use;
+                    Player.InputReader.onEndUse_R += EndUse;
                     break;
                 }
             case Handedness.Left:
                 {
-                    Player.inputReader.onHandPos_L += UpdatePosition;
-                    Player.inputReader.onHandRot_L += UpdateRotation;
-                    Player.inputReader.Grab_L += Grab;
-                    Player.inputReader.UnGrab_L += UnGrab;
-                    Player.inputReader.onUse_L += Use;
-                    Player.inputReader.onEndUse_L += EndUse;
+                    Player.InputReader.onHandPos_L += UpdatePosition;
+                    Player.InputReader.onHandRot_L += UpdateRotation;
+                    Player.InputReader.Grab_L += Grab;
+                    Player.InputReader.UnGrab_L += UnGrab;
+                    Player.InputReader.onUse_L += Use;
+                    Player.InputReader.onEndUse_L += EndUse;
                     break;
                 }
         }
