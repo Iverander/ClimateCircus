@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 public class Grabable : MonoBehaviour
 {
     public bool Throwable = false;
-    [FormerlySerializedAs("throwForce")] [ShowIf("Throwable"), SerializeField] float mass = 1f;
+    [ShowIf("Throwable"), SerializeField] float mass = 1f;
    private Collider col;
    private void Start()
    {
