@@ -36,6 +36,7 @@ public class Grabable : MonoBehaviour
            if(!Throwable) return;
            col.attachedRigidbody.AddForce(hand.CalculateVelocity() / mass, ForceMode.Force);
        }
+        GetComponent<waterBaloon>()?.ArmBalloon();
    }
 
    /// <summary>
