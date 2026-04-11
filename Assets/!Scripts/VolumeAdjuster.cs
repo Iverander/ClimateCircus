@@ -1,3 +1,4 @@
+using System;
 using FMODUnity;
 using UnityEngine;
 
@@ -10,5 +11,10 @@ public class VolumeAdjuster : MonoBehaviour
     {
         emitter = GetComponent<StudioEventEmitter>();
         emitter.EventInstance.setVolume(volume);
+    }
+
+    private void Update()
+    {
+        //emitter.EventInstance.setVolume(volume); 
     }
 }
