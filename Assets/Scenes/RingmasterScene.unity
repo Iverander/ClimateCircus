@@ -1643,6 +1643,50 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &233786249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233786245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 744d722f37a71b528960c8816a4d5251, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VolumeAdjuster
+  volume: 0.145
+--- !u!114 &233786250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233786245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1630645157
+      Data2: 1234941329
+      Data3: 971269294
+      Data4: 1275827219
+    Path: event:/Ringmaster game music
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!4 &237024167 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1987163287510293988, guid: 73e5eb6344dfa384bb6b6e50d6231ee6, type: 3}
@@ -7138,6 +7182,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3894c360ab3b9af46b786656ffe0e50e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 233786248}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3894c360ab3b9af46b786656ffe0e50e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 233786250}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3894c360ab3b9af46b786656ffe0e50e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 233786249}
   m_SourcePrefab: {fileID: 100100000, guid: 3894c360ab3b9af46b786656ffe0e50e, type: 3}
 --- !u!1001 &1008078901
 PrefabInstance:

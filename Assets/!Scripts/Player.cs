@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     public static Player instance;
     public static InputReader InputReader = instance.inputReader;
+
     
     public InputReader inputReader { get; private set; }
     public Camera camera {get;private set;}
