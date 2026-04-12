@@ -7,8 +7,8 @@ public class Grabable : MonoBehaviour
 {
     public bool Throwable = false;
     [ShowIf("Throwable"), SerializeField] float mass = 1f;
-   private Collider col;
-   private void Start()
+   [ReadOnly, SerializeField]private Collider col;
+   protected virtual void Start()
    {
       col = GetComponent<Collider>();
    }
@@ -18,9 +18,10 @@ public class Grabable : MonoBehaviour
    /// </summary>
    public virtual void OnPickup(Hand hand)
    {
-       col.isTrigger = true;
-       if(col.attachedRigidbody != null)
+       if(col.attachedRigidbody)
            col.attachedRigidbody.isKinematic = true; //simplified
+       
+       col.enabled = false;
    }
 
    /// <summary>
@@ -28,15 +29,17 @@ public class Grabable : MonoBehaviour
    /// </summary>
    public virtual void OnDrop(Hand hand)
    {
-       col.isTrigger = false;
-       if (col.attachedRigidbody != null)
+       col.enabled = true;
+       if (col.attachedRigidbody)
        {
            col.attachedRigidbody.isKinematic = false; // here too
-           
-           if(!Throwable) return;
-           col.attachedRigidbody.AddForce(hand.CalculateVelocity() / mass, ForceMode.Force);
+           Debug.Log(col.attachedRigidbody.isKinematic);
+
+           if (Throwable)
+           {
+               col.attachedRigidbody.AddForce(hand.CalculateVelocity() / mass, ForceMode.Force);
+           }
        }
-        GetComponent<waterBaloon>()?.ArmBalloon();
    }
 
    /// <summary>

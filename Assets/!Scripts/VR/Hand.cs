@@ -113,8 +113,8 @@ public class Hand : MonoBehaviour
     {
         if(!grabbed) return;
         
-        grabbed.OnDrop(this);
         grabbed.transform.parent = null;
+        grabbed.OnDrop(this);
         grabbed = null;
     }
     

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using FMODUnity;
 
@@ -10,45 +11,46 @@ public class waterBaloon : Grabable // a monobehaviour script (a script thats pu
 
     [Header("FMOD")]
     public EventReference splashEvent;
-
-    private bool hasHit = false;
     private bool isArmed = false; // NEW: only explodes after throw
 
-    void Awake()
+    protected override void Start() //using start is better
     {
+        base.Start();
         isArmed = false;
+        WaterBalloonManager.Instance.currentBalloons++; //shortcut for +1
     }
 
-    // CALL THIS when you RELEASE / THROW the object from Grabable
-    public void ArmBalloon()
+    private void OnDestroy()
     {
-        isArmed = true;
+        if(!Application.isPlaying) return;
+        
+        // VFX
+        if (splashEffectPrefab != null)
+        {
+            Destroy(Instantiate(splashEffectPrefab, transform.position, Quaternion.identity), 1);
+        }
+
+        // FMOD sound
+        RuntimeManager.PlayOneShot(splashEvent, transform.position);
+        
+        WaterBalloonManager.Instance.BalloonDestroyed();
+    }
+
+    public override void OnDrop(Hand hand) //override the original method from the Grabable script with our own
+    {
+        base.OnDrop(hand); //do the original method
+        
+        Debug.Log("dropped balloon");
+        
+        Destroy(gameObject, 5);
+        isArmed = true; // arm
     }
 
     void OnCollisionEnter(Collision collision)
     {
         if (!isArmed) return;   // ❌ ignore table collisions
-        if (hasHit) return;
 
-        hasHit = true;
-
-        Vector3 hitPoint = collision.contacts[0].point;
-
-        // VFX
-        if (splashEffectPrefab != null)
-        {
-            Instantiate(splashEffectPrefab, hitPoint, Quaternion.identity);
-        }
-
-        // FMOD sound
-        RuntimeManager.PlayOneShot(splashEvent, hitPoint);
-
-        // Hide object
-        GetComponent<MeshRenderer>().enabled = false;
-        GetComponent<Collider>().enabled = false;
-        WaterBalloonManager.Instance.BalloonDestroyed();
-
-        Destroy(gameObject, 0.5f);
+        Destroy(gameObject);
     }
 
 }
