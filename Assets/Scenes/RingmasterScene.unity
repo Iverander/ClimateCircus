@@ -11287,7 +11287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueStarter
   characterObj: {fileID: 2063046248}
-  endingAttached: {fileID: 1652228713}
+  endingAttached: {fileID: 0}
   phrases:
   - Guid:
       Data1: 859464809
@@ -25899,13 +25899,13 @@ MonoBehaviour:
   flameManager1: {fileID: 639878474}
   flameManager2: {fileID: 1231876297}
   flameManager3: {fileID: 1339061255}
-  flameManager4: {fileID: 1398533748}
-  flameManager5: {fileID: 1055221618}
-  flameManager6: {fileID: 1413941943}
-  flameManager7: {fileID: 462192852}
-  flameManager8: {fileID: 880294756}
-  flameManager9: {fileID: 2122098768}
-  endObjectToAppear: {fileID: 1235673427}
+  flameManager4: {fileID: 0}
+  flameManager5: {fileID: 0}
+  flameManager6: {fileID: 0}
+  flameManager7: {fileID: 0}
+  flameManager8: {fileID: 0}
+  flameManager9: {fileID: 0}
+  endObjectToAppear: {fileID: 0}
   ringmaster: {fileID: 2063046248}
 --- !u!4 &1658563623 stripped
 Transform:
@@ -26701,8 +26701,8 @@ MonoBehaviour:
       Data4: 2116987047
     Path: event:/water
   Event: 
-  EventPlayTrigger: 1
-  EventStopTrigger: 2
+  EventPlayTrigger: 11
+  EventStopTrigger: 12
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
