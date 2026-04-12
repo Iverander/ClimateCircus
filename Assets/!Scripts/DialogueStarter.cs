@@ -1,12 +1,15 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic; 
 using FMODUnity;
 using FMOD.Studio;
 
 public class DialogueStarter : MonoBehaviour
 {
+    
     [Header("References")]
     public GameObject characterObj;
+    public GameEnding endingAttached; 
 
     [Header("FMOD Events")]
     public EventReference[] phrases;
@@ -54,16 +57,9 @@ public class DialogueStarter : MonoBehaviour
     {
         yield return new WaitForSeconds(gameDuration);
 
-        // stop current playing audio
-        currentInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        Debug.Log("The timer is up"); 
 
-        // play ending audio
-        RuntimeManager.PlayOneShot(endEvent);
-
-        // wait a bit (optional, adjust if needed)
-        yield return new WaitForSeconds(3f);
-
-        characterObj.SetActive(false);
+        endingAttached.StartGameEnding(); 
     }
 
     IEnumerator WaitForFMODEvent(EventInstance instance)
@@ -93,4 +89,5 @@ public class DialogueStarter : MonoBehaviour
             yield return null;
         }
     }
+    
 }

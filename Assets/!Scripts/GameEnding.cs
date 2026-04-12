@@ -7,9 +7,11 @@ using System.Diagnostics;
 
 public class GameEnding : MonoBehaviour{
 
+    
     [Header("FMOD Events")]
     
     public EventReference winningGame;
+
     public FlameManager flameManager1; 
     public FlameManager flameManager2; 
     public FlameManager flameManager3; 
@@ -19,6 +21,15 @@ public class GameEnding : MonoBehaviour{
      public FlameManager flameManager7; 
     public FlameManager flameManager8; 
     public FlameManager flameManager9; 
+
+    public GameObject endObjectToAppear; 
+
+    private bool endingPossible = false; 
+
+    public void StartGameEnding()
+    {
+        endingPossible = true; 
+    }
 
     private int flameCount = 0; 
     public GameObject ringmaster; 
@@ -33,7 +44,7 @@ public class GameEnding : MonoBehaviour{
     }
     public void CheckFlameCount()
     {
-        if (flameCount == 0 )
+        if (flameCount == 0 && endingPossible ==true)
         {
             flameManager1.deactivateFlames(); 
             flameManager2.deactivateFlames(); 
@@ -51,9 +62,12 @@ public class GameEnding : MonoBehaviour{
             emitter.EventReference = winningGame;
             emitter.Play();
 
+            if (endObjectToAppear != null) endObjectToAppear.SetActive(true);
+
             RuntimeManager.PlayOneShot(winningGame);
         }
     }
+    
 
     
 }
