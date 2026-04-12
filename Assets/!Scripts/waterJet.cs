@@ -14,6 +14,10 @@ public class waterJet : Grabable
      {
          GetParticleCollisions(flame.gameObject); 
      }
+     foreach (var torch in FindObjectsByType<ExtinguishTorch>(FindObjectsSortMode.None))
+    {
+        GetParticleCollisions(torch.gameObject);
+    }
 
  }
 
@@ -27,6 +31,10 @@ public class waterJet : Grabable
         if (collision.colliderComponent.TryGetComponent(out FlameSlot flame))
         {
             flame.DeactivateFlame();
+        }
+        else if (collision.colliderComponent.gameObject.TryGetComponent(out ExtinguishTorch torch))
+        {
+            torch.Extinguish();
         }
     }
  }
