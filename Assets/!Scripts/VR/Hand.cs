@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -16,6 +17,12 @@ public class Hand : MonoBehaviour
     [SerializeField] private Animator handAnimator; 
     public Handedness handedness;
     private HapticImpulsePlayer hapticPlayer;
+    
+    [ReadOnly] public List<Vector3> handPos = new()
+    {
+        Vector3.zero,
+        Vector3.zero
+    };
 
     void Start()
     {
@@ -25,22 +32,22 @@ public class Hand : MonoBehaviour
         {
             case Handedness.Right:
                 {
-                    Player.inputReader.onHandPos_R += UpdatePosition;
-                    Player.inputReader.onHandRot_R += UpdateRotation;
-                    Player.inputReader.Grab_R += Grab;
-                    Player.inputReader.UnGrab_R += UnGrab;
-                    Player.inputReader.onUse_R += Use;
-                    Player.inputReader.onEndUse_R += EndUse;
+                    Player.InputReader.onHandPos_R += UpdatePosition;
+                    Player.InputReader.onHandRot_R += UpdateRotation;
+                    Player.InputReader.Grab_R += Grab;
+                    Player.InputReader.UnGrab_R += UnGrab;
+                    Player.InputReader.onUse_R += Use;
+                    Player.InputReader.onEndUse_R += EndUse;
                     break;
                 }
             case Handedness.Left:
                 {
-                    Player.inputReader.onHandPos_L += UpdatePosition;
-                    Player.inputReader.onHandRot_L += UpdateRotation;
-                    Player.inputReader.Grab_L += Grab;
-                    Player.inputReader.UnGrab_L += UnGrab;
-                    Player.inputReader.onUse_L += Use;
-                    Player.inputReader.onEndUse_L += EndUse;
+                    Player.InputReader.onHandPos_L += UpdatePosition;
+                    Player.InputReader.onHandRot_L += UpdateRotation;
+                    Player.InputReader.Grab_L += Grab;
+                    Player.InputReader.UnGrab_L += UnGrab;
+                    Player.InputReader.onUse_L += Use;
+                    Player.InputReader.onEndUse_L += EndUse;
                     break;
                 }
         }
@@ -63,10 +70,13 @@ public class Hand : MonoBehaviour
 
     private void Update()
     {
+        handPos[1] = handPos[0];
+        handPos[0] = transform.position;
+        
         if(handedness == Handedness.Right)
-            handAnimator.SetFloat("Grip", Player.inputReader.gripValue_R);
+            handAnimator.SetFloat("Grip", Player.InputReader.gripValue_R);
         else if(handedness == Handedness.Left)
-            handAnimator.SetFloat("Grip", Player.inputReader.gripValue_L);
+            handAnimator.SetFloat("Grip", Player.InputReader.gripValue_L);
         
        if(!toGrab || grabbed) return;
        if (Vector3.Distance(toGrab.transform.position, transform.position) > .5f)
@@ -96,15 +106,15 @@ public class Hand : MonoBehaviour
         grabbed = toGrab;
         toGrab = null;
         grabbed.transform.parent = transform;
-        grabbed.OnPickup();
+        grabbed.OnPickup(this);
     }
     [Button]
     private void UnGrab()
     {
         if(!grabbed) return;
         
-        grabbed.OnDrop();
         grabbed.transform.parent = null;
+        grabbed.OnDrop(this);
         grabbed = null;
     }
     
@@ -121,5 +131,10 @@ public class Hand : MonoBehaviour
     public void HapticFeedback(float amp, float dur)
     {
         hapticPlayer.SendHapticImpulse(amp, dur);
+    }
+    
+    public Vector3 CalculateVelocity()
+    {
+        return (handPos[0] - handPos[1])/Time.deltaTime;
     }
 }

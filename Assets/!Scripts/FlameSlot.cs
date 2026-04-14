@@ -15,6 +15,13 @@ public class FlameSlot : MonoBehaviour
             gameEnding.IncreaseFlameCount();
         }
     }
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("WaterBalloon"))
+        {
+        DeactivateFlame();
+        }
+    }
 
     public void DeactivateFlame()
     {
@@ -23,7 +30,7 @@ public class FlameSlot : MonoBehaviour
             Destroy(currentFlame);
             currentFlame = null;
             gameEnding.DecreaseFlameCount(); 
-            gameEnding.CheckFlameCount(); 
         }
     }
+
 }

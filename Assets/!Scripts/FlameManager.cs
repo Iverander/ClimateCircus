@@ -25,6 +25,7 @@ public class FlameManager : MonoBehaviour
         {
             yield return new WaitForSeconds(Random.Range(minDelay, maxDelay));
 
+            if(!flamesActivated) yield break;
             int index = Random.Range(0, slots.Length);
             slots[index].ActivateFlame();
         }

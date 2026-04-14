@@ -11,12 +11,12 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody rb => Player.instance.rb;
     void Start()
     {
-        Player.inputReader.onMove += GetMoveValue;
+        Player.InputReader.onMove += GetMoveValue;
     }
 
     private void OnDestroy()
     {
-       Player.inputReader.onMove -= GetMoveValue; 
+       Player.InputReader.onMove -= GetMoveValue; 
     }
 
     void FixedUpdate()

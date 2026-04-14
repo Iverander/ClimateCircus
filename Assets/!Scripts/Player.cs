@@ -4,17 +4,20 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Player : MonoBehaviour
 {
-    public static InputReader inputReader = new();
     public static Player instance;
+    public static InputReader InputReader => instance.inputReader;
 
+    
+    public InputReader inputReader { get; private set; }
     public Camera camera {get;private set;}
     public Rigidbody rb { get; private set; }
 
 
     void Start()
     {
-        inputReader.Enable();
         instance = this;
+        inputReader = new InputReader();
+        inputReader.Enable();
         rb = GetComponent<Rigidbody>();
         camera = GetComponentInChildren<Camera>();
     }
