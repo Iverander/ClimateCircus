@@ -7772,6 +7772,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Table 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8691317156095212741, guid: 755ee32b773522244b5669c29d5ebd96, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9157924271501443928, guid: 755ee32b773522244b5669c29d5ebd96, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.459474
@@ -7826,6 +7830,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8691317156095212740, guid: 755ee32b773522244b5669c29d5ebd96, type: 3}
+    - {fileID: 8691317156095212741, guid: 755ee32b773522244b5669c29d5ebd96, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -25038,7 +25043,7 @@ MonoBehaviour:
   flameManager7: {fileID: 0}
   flameManager8: {fileID: 0}
   flameManager9: {fileID: 0}
-  endObjectToAppear: {fileID: 0}
+  endObjectToAppear: {fileID: 1359332716203714789}
   ringmaster: {fileID: 2063046248}
 --- !u!4 &1658563623 stripped
 Transform:
@@ -28448,28 +28453,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2340392353166231058, guid: ba2cd1293c130b052b23c9d3b86f4a7e, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2340392353166231058, guid: ba2cd1293c130b052b23c9d3b86f4a7e, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2340392353166231058, guid: ba2cd1293c130b052b23c9d3b86f4a7e, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2340392353166231058, guid: ba2cd1293c130b052b23c9d3b86f4a7e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 171.28
       objectReference: {fileID: 0}
     - target: {fileID: 2340392353166231058, guid: ba2cd1293c130b052b23c9d3b86f4a7e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.27621
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2340392353166231058, guid: ba2cd1293c130b052b23c9d3b86f4a7e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 102.648
+      value: 104.319
       objectReference: {fileID: 0}
     - target: {fileID: 2340392353166231058, guid: ba2cd1293c130b052b23c9d3b86f4a7e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -28499,19 +28492,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2340392353166231058, guid: ba2cd1293c130b052b23c9d3b86f4a7e, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3233929726897725173, guid: ba2cd1293c130b052b23c9d3b86f4a7e, type: 3}
       propertyPath: m_Name
       value: RobotArm
       objectReference: {fileID: 0}
+    - target: {fileID: 3233929726897725173, guid: ba2cd1293c130b052b23c9d3b86f4a7e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3233929726897725173, guid: ba2cd1293c130b052b23c9d3b86f4a7e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1359332716203714794}
   m_SourcePrefab: {fileID: 100100000, guid: ba2cd1293c130b052b23c9d3b86f4a7e, type: 3}
+--- !u!1 &1359332716203714789 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3233929726897725173, guid: ba2cd1293c130b052b23c9d3b86f4a7e, type: 3}
+  m_PrefabInstance: {fileID: 1359332716203714788}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1359332716203714794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359332716203714789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb114f16e9460ec3a99b0bc488393221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  hoverAxis: {x: 0, y: 1, z: 0}
+  degree: 0.1
 --- !u!1001 &8507034086745550144
 PrefabInstance:
   m_ObjectHideFlags: 0

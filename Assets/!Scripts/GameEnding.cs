@@ -41,12 +41,13 @@ public class GameEnding : MonoBehaviour{
     public void DecreaseFlameCount()
     {
         flameCount--; 
+        CheckFlameCount(); 
     }
     public void CheckFlameCount()
     {
-        if (flameCount == 0 && endingPossible ==true)
+        if (flameCount <= 0 && endingPossible)
         {
-            flameManager1.deactivateFlames(); 
+            flameManager1.deactivateFlames();  //ever heard of a list?
             flameManager2.deactivateFlames(); 
             flameManager3.deactivateFlames(); 
             flameManager4.deactivateFlames(); 

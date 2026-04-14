@@ -30,7 +30,6 @@ public class FlameSlot : MonoBehaviour
             Destroy(currentFlame);
             currentFlame = null;
             gameEnding.DecreaseFlameCount(); 
-            gameEnding.CheckFlameCount(); 
         }
     }
 
