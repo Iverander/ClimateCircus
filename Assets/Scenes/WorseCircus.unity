@@ -662,7 +662,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 36abd29885354e1479b2147e43daced7, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 39e8c10260e18a14f994362703572b1a, type: 2}
+      objectReference: {fileID: 2100000, guid: c60161de22717034bb424601f4a453f4, type: 2}
     - target: {fileID: 919132149155446097, guid: 36abd29885354e1479b2147e43daced7, type: 3}
       propertyPath: m_Name
       value: circus_ent 2
@@ -1170,7 +1170,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 12
   m_Type: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.49667883, g: 0, b: 1, a: 1}
   m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
@@ -1214,8 +1214,8 @@ Light:
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 2000
-  m_UseColorTemperature: 1
+  m_ColorTemperature: 7292
+  m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
@@ -1234,7 +1234,7 @@ Transform:
   m_GameObject: {fileID: 410087039}
   serializedVersion: 2
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 399, y: -451, z: -432}
+  m_LocalPosition: {x: -8.85, y: 14.85, z: 15.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1710,7 +1710,7 @@ PrefabInstance:
     - target: {fileID: -9116111523425013639, guid: 3e5d00a524cec5a40adbf8383d23594e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 0e0bbace781930b499cc3a95a1b642c5, type: 2}
+      objectReference: {fileID: 2100000, guid: c60161de22717034bb424601f4a453f4, type: 2}
     - target: {fileID: -8679921383154817045, guid: 3e5d00a524cec5a40adbf8383d23594e, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -1770,11 +1770,15 @@ PrefabInstance:
     - target: {fileID: -5697047820873595708, guid: 3e5d00a524cec5a40adbf8383d23594e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 0e0bbace781930b499cc3a95a1b642c5, type: 2}
+      objectReference: {fileID: 2100000, guid: eb799e8efda738642829877d416fbfdd, type: 2}
     - target: {fileID: 919132149155446097, guid: 3e5d00a524cec5a40adbf8383d23594e, type: 3}
       propertyPath: m_Name
       value: circus tent
       objectReference: {fileID: 0}
+    - target: {fileID: 6301397168828398976, guid: 3e5d00a524cec5a40adbf8383d23594e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: eb799e8efda738642829877d416fbfdd, type: 2}
     - target: {fileID: 8154883345141257923, guid: 3e5d00a524cec5a40adbf8383d23594e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
