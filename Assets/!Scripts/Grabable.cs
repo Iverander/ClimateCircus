@@ -3,6 +3,7 @@ using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Serialization;
 
+[RequireComponent(typeof(Collider))]
 public class Grabable : MonoBehaviour
 {
     public bool Throwable = false;
