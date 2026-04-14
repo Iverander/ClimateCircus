@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{b208b2cd-ae6b-4f21-b51a-629e58555ac7}">
 		<property name="name">
-			<value>New Event 2</value>
+			<value>NEW background music</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -30,6 +30,9 @@
 		</relationship>
 		<relationship name="timeline">
 			<destination>{fbce9249-8749-4217-926f-de1404cd1b69}</destination>
+		</relationship>
+		<relationship name="banks">
+			<destination>{43edc1bf-4b78-4f3d-a4ad-b1eeff3f52f5}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{33532446-b7d2-4798-abc3-f5cf9a2b1784}">
@@ -115,10 +118,10 @@
 	</object>
 	<object class="LoopRegion" id="{a3dfdcf7-c246-4543-8dab-7df568b8d55b}">
 		<property name="position">
-			<value>14</value>
+			<value>13</value>
 		</property>
 		<property name="length">
-			<value>19.264000000000003</value>
+			<value>20</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{fbce9249-8749-4217-926f-de1404cd1b69}</destination>
