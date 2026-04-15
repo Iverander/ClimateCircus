@@ -24819,7 +24819,7 @@ MonoBehaviour:
       Data2: 1212347651
       Data3: -1508401740
       Data4: 1560582342
-    Path: event:/You think you have a chocice that's cute
+    Path: event:/VoiceLines/You think you have a chocice that's cute
   flameManager1: {fileID: 639878474}
   flameManager2: {fileID: 1231876297}
   flameManager3: {fileID: 1339061255}
@@ -28321,6 +28321,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 914270026}
     m_Modifications:
+    - target: {fileID: 6158749196170893638, guid: 603d94f2be7450336b7217c644f9e961, type: 3}
+      propertyPath: EventReference.Path
+      value: event:/SFX/water
+      objectReference: {fileID: 0}
     - target: {fileID: 7169522798856419309, guid: 603d94f2be7450336b7217c644f9e961, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.443
