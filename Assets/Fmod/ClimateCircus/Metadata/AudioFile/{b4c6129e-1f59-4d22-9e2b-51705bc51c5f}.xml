@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{b4c6129e-1f59-4d22-9e2b-51705bc51c5f}">
+		<property name="assetPath">
+			<value>Win game-medium.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4.4669387755102044</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{dfd13418-2249-432a-9392-78eb7b06cfb5}</destination>
+		</relationship>
+	</object>
+</objects>
