@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baf572dc130be5fe18fbb9ea07c18ff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  speed: 4
+  speed: 3
 --- !u!1 &2139193190420981218
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,6 +162,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   handAnimator: {fileID: 4192412210989488603}
   handedness: 0
+  handPos:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   toGrab: {fileID: 0}
 --- !u!135 &957769502767685698
 SphereCollider:
@@ -397,6 +400,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   handAnimator: {fileID: 8943708750825207370}
   handedness: 1
+  handPos:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   toGrab: {fileID: 0}
 --- !u!135 &6905654463176801134
 SphereCollider:

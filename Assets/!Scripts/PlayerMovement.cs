@@ -3,7 +3,10 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    Vector3 moveDir => (Player.instance.camera.transform.forward * moveVal.y + Player.instance.camera.transform.right * moveVal.x).normalized;
+    Camera cam => Player.instance.camera;
+    Vector3 cameraForward => new Vector3(cam.transform.forward.x, 0, cam.transform.forward.z).normalized;
+    Vector3 cameraRight => new Vector3(cam.transform.right.x, 0, cam.transform.right.z).normalized;
+    Vector3 moveDir => (cameraForward * moveVal.y + cameraRight * moveVal.x).normalized;
     Vector2 moveVal;
 
     [SerializeField] float speed;
@@ -20,9 +23,10 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void FixedUpdate()
-    {
-        rb.AddForce(100 * speed * Time.fixedDeltaTime * moveDir, ForceMode.Force);
+    { 
+        //rb.AddForce(100 * speed * Time.fixedDeltaTime * moveDir, ForceMode.Force);
         Debug.Log(moveDir);
+        rb.linearVelocity = moveDir * (speed * 100 * Time.fixedDeltaTime) + new Vector3(0, rb.linearVelocity.y, 0);
         LimitSpeed();
     }
 
