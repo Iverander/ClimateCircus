@@ -6,11 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/WorseCircus.unity
+    guid: e6a11eabb4a78974899c9e83a5b2a655
+  - enabled: 1
     path: Assets/Scenes/RingmasterScene.unity
     guid: 751a2db4bec2af340ada1b1b82f84498
   - enabled: 1
-    path: Assets/Scenes/WorseCircus.unity
-    guid: e6a11eabb4a78974899c9e83a5b2a655
+    path: Assets/Scenes/BetterCircus.unity
+    guid: f449c6f99b983664b9cc714debf59713
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: d0379658b73d8bc119c4f4b435d63aee, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
