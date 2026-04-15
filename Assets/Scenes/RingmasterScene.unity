@@ -28286,6 +28286,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8146787337768900814, guid: ba2cd1293c130b052b23c9d3b86f4a7e, type: 3}
+      propertyPath: _sceneName
+      value: BetterCircus
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
