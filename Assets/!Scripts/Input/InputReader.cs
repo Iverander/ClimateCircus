@@ -10,12 +10,16 @@ public class InputReader : InputSystem_Actions.IPlayerActions, InputSystem_Actio
     {
         actions = new InputSystem_Actions();
         actions.Player.SetCallbacks(this);
+        actions.LeftHand.SetCallbacks(this);
+        actions.RightHand.SetCallbacks(this);
         actions.Enable();
     }
 
     public void Disable()
     {
         actions.Player.RemoveCallbacks(this);
+        actions.LeftHand.SetCallbacks(this);
+        actions.RightHand.SetCallbacks(this);
         actions.Disable();
     }
 
@@ -33,10 +37,26 @@ public class InputReader : InputSystem_Actions.IPlayerActions, InputSystem_Actio
         onHandPos_R?.Invoke(context.ReadValue<Vector3>());
     }
 
+ 
+    public Action onUse_R;
+    public Action onEndUse_R;
+    void InputSystem_Actions.IRightHandActions.OnUse(InputAction.CallbackContext context)
+    {
+        if(context.started) 
+            onUse_R?.Invoke();
+        else if (context.canceled)
+            onEndUse_R?.Invoke();
+    }
+
     public Action<Quaternion> onHandRot_R;
     void InputSystem_Actions.IRightHandActions.OnHandRot(InputAction.CallbackContext context)
     {
         onHandRot_R?.Invoke(context.ReadValue<Quaternion>());
+    }
+
+    void InputSystem_Actions.ILeftHandActions.OnHaptic(InputAction.CallbackContext context)
+    {
+        throw new NotImplementedException();
     }
 
     public Action Grab_R;
@@ -47,6 +67,17 @@ public class InputReader : InputSystem_Actions.IPlayerActions, InputSystem_Actio
             Grab_R?.Invoke();
         else if (context.canceled)
             UnGrab_R?.Invoke();
+    }
+
+    public float gripValue_R; 
+    void InputSystem_Actions.IRightHandActions.OnGrabValue(InputAction.CallbackContext context)
+    {
+        gripValue_R = context.ReadValue<float>();
+    }
+
+    void InputSystem_Actions.IRightHandActions.OnHaptic(InputAction.CallbackContext context)
+    {
+        
     }
 
     #endregion
@@ -73,5 +104,27 @@ public class InputReader : InputSystem_Actions.IPlayerActions, InputSystem_Actio
         else if (context.canceled)
             UnGrab_L?.Invoke();
     }
+    
+    public void OnTracking(InputAction.CallbackContext context)
+    {
+       Debug.Log(context.ReadValue<int>()); 
+    }
+
+    public Action onUse_L;
+    public Action onEndUse_L;
+    void InputSystem_Actions.ILeftHandActions.OnUse(InputAction.CallbackContext context)
+    {
+        if(context.started)
+            onUse_L?.Invoke();
+        else if (context.canceled)
+            onEndUse_L?.Invoke();
+    }
+    
+    public float gripValue_L; 
+    void InputSystem_Actions.ILeftHandActions.OnGrabValue(InputAction.CallbackContext context)
+    {
+        gripValue_L = context.ReadValue<float>();
+    }
+
     #endregion
 }

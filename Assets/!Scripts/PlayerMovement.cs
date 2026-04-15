@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -10,7 +11,12 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody rb => Player.instance.rb;
     void Start()
     {
-        Player.inputReader.onMove += GetMoveValue;
+        Player.InputReader.onMove += GetMoveValue;
+    }
+
+    private void OnDestroy()
+    {
+       Player.InputReader.onMove -= GetMoveValue; 
     }
 
     void FixedUpdate()
