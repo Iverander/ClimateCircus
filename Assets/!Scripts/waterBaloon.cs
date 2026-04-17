@@ -23,6 +23,20 @@ public class waterBaloon : Grabable // a monobehaviour script (a script thats pu
     private void OnDestroy()
     {
         if(!Application.isPlaying) return;
+
+        Collider[] col = Physics.OverlapSphere(transform.position, 2);
+
+        foreach (Collider coll in col)
+        {
+            if (coll.TryGetComponent(out FlameSlot flame))
+            {
+                flame.DeactivateFlame();
+            }
+            else if ( coll.TryGetComponent(out ExtinguishTorch flame2))
+            {
+                 flame2.Extinguish();
+            }
+        }
         
         // VFX
         if (splashEffectPrefab != null)
