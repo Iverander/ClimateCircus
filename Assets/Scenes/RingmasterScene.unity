@@ -10359,47 +10359,47 @@ MonoBehaviour:
   endingAttached: {fileID: 1652228713}
   phrases:
   - Guid:
-      Data1: -1005214762
-      Data2: 1248682875
-      Data3: 1697389980
-      Data4: 2138578520
-    Path: event:/Music/Intro Music
+      Data1: 1440015868
+      Data2: 1126965563
+      Data3: -308926044
+      Data4: 1213965231
+    Path: event:/VoiceLines/burn the forest down
   - Guid:
       Data1: -512166071
       Data2: 1192537104
       Data3: 1689455037
       Data4: -653248367
-    Path: event:/i don't rule people
+    Path: event:/VoiceLines/i don't rule people
   - Guid:
-      Data1: -1123742684
-      Data2: 1297666868
-      Data3: 82008733
-      Data4: 1956276323
-    Path: event:/Nature is just another resource
-  - Guid:
-      Data1: -45962637
-      Data2: 1270036514
-      Data3: 1444635280
-      Data4: 629166648
-    Path: event:/Trees don't vote
+      Data1: 859464809
+      Data2: 1097844287
+      Data3: -600454474
+      Data4: 2104508903
+    Path: event:/VoiceLines/Let it burn
   - Guid:
       Data1: -908766917
       Data2: 1212691221
       Data3: -743045199
       Data4: -734939253
-    Path: event:/Power isn't given
+    Path: event:/VoiceLines/Power isn't given
   - Guid:
-      Data1: 216230020
-      Data2: 1169927328
-      Data3: -1296800863
-      Data4: 1660533748
-    Path: event:/Morals don't pay
+      Data1: 1749183658
+      Data2: 1212347651
+      Data3: -1508401740
+      Data4: 1560582342
+    Path: event:/VoiceLines/You think you have a chocice that's cute
   - Guid:
       Data1: -49694711
       Data2: 1082241434
       Data3: 788543928
       Data4: -1504819691
-    Path: event:/The forest isn't going anywhere
+    Path: event:/VoiceLines/The forest isn't going anywhere
+  - Guid:
+      Data1: 859464809
+      Data2: 1097844287
+      Data3: -600454474
+      Data4: 2104508903
+    Path: event:/VoiceLines/Let it burn
   endEvent:
     Guid:
       Data1: 349392364
@@ -10410,7 +10410,7 @@ MonoBehaviour:
   minDelay: 3
   maxDelay: 7
   startDelay: 10
-  gameDuration: 120
+  gameDuration: 20
   fadeSpeed: 2
 --- !u!4 &1316777342
 Transform:
@@ -24813,6 +24813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f180920dc575974ca77bb8c10375fa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameEnding
+  soundSource: {fileID: 1997851138}
   winningGame:
     Guid:
       Data1: 349392364

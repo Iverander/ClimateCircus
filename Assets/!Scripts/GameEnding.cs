@@ -7,6 +7,8 @@ using System.Diagnostics;
 
 public class GameEnding : MonoBehaviour{
 
+    public Transform soundSource;
+
     
     [Header("FMOD Events")]
     
@@ -62,10 +64,11 @@ public class GameEnding : MonoBehaviour{
            // var emitter = new GameObject().AddComponent<StudioEventEmitter>();
             //emitter.EventReference = winningGame;
            // emitter.Play();
+           RuntimeManager.PlayOneShot(winningGame, soundSource.position);
 
             if (endObjectToAppear != null) endObjectToAppear.SetActive(true);
 
-            RuntimeManager.PlayOneShot(winningGame);
+        
         }
     }
     
