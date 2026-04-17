@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{04d778b7-acaa-4418-b547-f372ccebfeff}">
+		<property name="assetPath">
+			<value>Waterballon bursts.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.5077551020408162</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{dfd13418-2249-432a-9392-78eb7b06cfb5}</destination>
+		</relationship>
+	</object>
+</objects>
