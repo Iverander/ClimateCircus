@@ -59,9 +59,9 @@ public class GameEnding : MonoBehaviour{
             
             
 
-            var emitter = new GameObject().AddComponent<StudioEventEmitter>();
-            emitter.EventReference = winningGame;
-            emitter.Play();
+           // var emitter = new GameObject().AddComponent<StudioEventEmitter>();
+            //emitter.EventReference = winningGame;
+           // emitter.Play();
 
             if (endObjectToAppear != null) endObjectToAppear.SetActive(true);
 
