@@ -10359,11 +10359,11 @@ MonoBehaviour:
   endingAttached: {fileID: 1652228713}
   phrases:
   - Guid:
-      Data1: 859464809
-      Data2: 1097844287
-      Data3: -600454474
-      Data4: 2104508903
-    Path: event:/Let it burn
+      Data1: -1005214762
+      Data2: 1248682875
+      Data3: 1697389980
+      Data4: 2138578520
+    Path: event:/Music/Intro Music
   - Guid:
       Data1: -512166071
       Data2: 1192537104
